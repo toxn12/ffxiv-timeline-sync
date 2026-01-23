@@ -1,0 +1,114 @@
+{
+  "id": "arcadion-heavy-1",
+  "raidName": "アルカディア・ヘビー級零式",
+  "bossName": "1層",
+  "duration": 600,
+  "targets": ["ボス"],
+  "phases": [
+    {
+      "id": "phase-1",
+      "name": "フェーズ1",
+      "startTime": 0,
+      "endTime": 180,
+      "color": "#60A5FA"
+    },
+    {
+      "id": "phase-2",
+      "name": "フェーズ2",
+      "startTime": 180,
+      "endTime": 360,
+      "color": "#34D399"
+    },
+    {
+      "id": "phase-3",
+      "name": "フェーズ3",
+      "startTime": 360,
+      "endTime": 600,
+      "color": "#FBBF24"
+    }
+  ],
+  "gimmicks": [
+    {
+      "id": "gimmick-1",
+      "name": "開幕攻撃",
+      "time": 10,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-2",
+      "name": "全体攻撃",
+      "time": 30,
+      "castDuration": 4,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-3",
+      "name": "頭割り",
+      "time": 60,
+      "castDuration": 5,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-4",
+      "name": "散開",
+      "time": 90,
+      "castDuration": 4,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-5",
+      "name": "全体攻撃",
+      "time": 120,
+      "castDuration": 4,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-6",
+      "name": "大技",
+      "time": 200,
+      "castDuration": 6,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-7",
+      "name": "全体攻撃",
+      "time": 240,
+      "castDuration": 4,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-8",
+      "name": "最終フェーズ開始",
+      "time": 380,
+      "castDuration": 5,
+      "phaseId": "phase-3"
+    }
+  ],
+  "burstTimings": [
+    {
+      "id": "burst-1",
+      "name": "開幕",
+      "startTime": 0,
+      "endTime": 20
+    },
+    {
+      "id": "burst-2",
+      "name": "2分",
+      "startTime": 120,
+      "endTime": 140
+    },
+    {
+      "id": "burst-3",
+      "name": "4分",
+      "startTime": 240,
+      "endTime": 260
+    },
+    {
+      "id": "burst-4",
+      "name": "6分",
+      "startTime": 360,
+      "endTime": 380
+    }
+  ]
+}

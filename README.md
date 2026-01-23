@@ -1,1 +1,0 @@
-# ffxiv-timeline-sync

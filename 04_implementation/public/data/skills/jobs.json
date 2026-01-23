@@ -1,0 +1,230 @@
+{
+  "jobs": [
+    {
+      "id": "paladin",
+      "name": "ナイト",
+      "role": "Tank",
+      "color": "#3B82F6",
+      "skills": [
+        { "id": "PLD_HALLOWED_GROUND", "name": "インビンシブル", "job": "ナイト", "role": null, "recast": 420, "duration": 10, "type": "軽減", "physicalMitigation": 100, "magicalMitigation": 100 },
+        { "id": "PLD_SENTINEL", "name": "センチネル", "job": "ナイト", "role": null, "recast": 120, "duration": 15, "type": "軽減", "physicalMitigation": 30, "magicalMitigation": 30 },
+        { "id": "PLD_DIVINE_VEIL", "name": "ディヴァインヴェール", "job": "ナイト", "role": null, "recast": 90, "duration": 30, "type": "バリア" },
+        { "id": "PLD_PASSAGE", "name": "パッセージ・オブ・アームズ", "job": "ナイト", "role": null, "recast": 120, "duration": 18, "type": "軽減", "physicalMitigation": 15, "magicalMitigation": 15 }
+      ]
+    },
+    {
+      "id": "warrior",
+      "name": "戦士",
+      "role": "Tank",
+      "color": "#3B82F6",
+      "skills": [
+        { "id": "WAR_HOLMGANG", "name": "ホルムギャング", "job": "戦士", "role": null, "recast": 240, "duration": 10, "type": "軽減", "physicalMitigation": 100, "magicalMitigation": 100 },
+        { "id": "WAR_VENGEANCE", "name": "ヴェンジェンス", "job": "戦士", "role": null, "recast": 120, "duration": 15, "type": "軽減", "physicalMitigation": 30, "magicalMitigation": 30 },
+        { "id": "WAR_SHAKE", "name": "シェイクオフ", "job": "戦士", "role": null, "recast": 90, "duration": 30, "type": "バリア" },
+        { "id": "WAR_BLOODWHETTING", "name": "原初の血気", "job": "戦士", "role": null, "recast": 25, "duration": 8, "type": "軽減", "physicalMitigation": 10, "magicalMitigation": 10 }
+      ]
+    },
+    {
+      "id": "darkknight",
+      "name": "暗黒騎士",
+      "role": "Tank",
+      "color": "#3B82F6",
+      "skills": [
+        { "id": "DRK_LIVING_DEAD", "name": "リビングデッド", "job": "暗黒騎士", "role": null, "recast": 300, "duration": 10, "type": "軽減", "physicalMitigation": 100, "magicalMitigation": 100 },
+        { "id": "DRK_SHADOW_WALL", "name": "シャドウウォール", "job": "暗黒騎士", "role": null, "recast": 120, "duration": 15, "type": "軽減", "physicalMitigation": 30, "magicalMitigation": 30 },
+        { "id": "DRK_TBN", "name": "ブラックナイト", "job": "暗黒騎士", "role": null, "recast": 15, "duration": 7, "type": "バリア" },
+        { "id": "DRK_OBLATION", "name": "オブレーション", "job": "暗黒騎士", "role": null, "recast": 60, "duration": 10, "type": "軽減", "physicalMitigation": 10, "magicalMitigation": 10 }
+      ]
+    },
+    {
+      "id": "gunbreaker",
+      "name": "ガンブレイカー",
+      "role": "Tank",
+      "color": "#3B82F6",
+      "skills": [
+        { "id": "GNB_SUPERBOLIDE", "name": "ボーライド", "job": "ガンブレイカー", "role": null, "recast": 360, "duration": 10, "type": "軽減", "physicalMitigation": 100, "magicalMitigation": 100 },
+        { "id": "GNB_NEBULA", "name": "ネビュラ", "job": "ガンブレイカー", "role": null, "recast": 120, "duration": 15, "type": "軽減", "physicalMitigation": 30, "magicalMitigation": 30 },
+        { "id": "GNB_HEART_OF_CORUNDUM", "name": "ハート・オブ・コランダム", "job": "ガンブレイカー", "role": null, "recast": 25, "duration": 8, "type": "軽減", "physicalMitigation": 15, "magicalMitigation": 15 },
+        { "id": "GNB_HEART_OF_LIGHT", "name": "ハート・オブ・ライト", "job": "ガンブレイカー", "role": null, "recast": 90, "duration": 15, "type": "軽減", "magicalMitigation": 10 }
+      ]
+    },
+    {
+      "id": "whitemage",
+      "name": "白魔道士",
+      "role": "Healer",
+      "color": "#22C55E",
+      "skills": [
+        { "id": "WHM_BENEDICTION", "name": "ベネディクション", "job": "白魔道士", "role": null, "castTime": 0, "recast": 180, "duration": 0, "type": "バフ" },
+        { "id": "WHM_ASYLUM", "name": "アサイラム", "job": "白魔道士", "role": null, "castTime": 0, "recast": 90, "duration": 24, "type": "バフ", "buffPower": 10 },
+        { "id": "WHM_TEMPERANCE", "name": "テンパランス", "job": "白魔道士", "role": null, "castTime": 0, "recast": 120, "duration": 20, "type": "軽減", "physicalMitigation": 10, "magicalMitigation": 10 },
+        { "id": "WHM_LITURGY", "name": "リタージー・オブ・ベル", "job": "白魔道士", "role": null, "castTime": 0, "recast": 180, "duration": 20, "type": "バフ" }
+      ]
+    },
+    {
+      "id": "scholar",
+      "name": "学者",
+      "role": "Healer",
+      "color": "#22C55E",
+      "skills": [
+        { "id": "SCH_DEPLOYMENT", "name": "展開戦術", "job": "学者", "role": null, "castTime": 0, "recast": 120, "duration": 0, "type": "バリア" },
+        { "id": "SCH_SACRED_SOIL", "name": "野戦治療の陣", "job": "学者", "role": null, "castTime": 0, "recast": 30, "duration": 15, "type": "軽減", "physicalMitigation": 10, "magicalMitigation": 10 },
+        { "id": "SCH_EXPEDIENT", "name": "疾風怒濤の計", "job": "学者", "role": null, "castTime": 0, "recast": 120, "duration": 20, "type": "軽減", "physicalMitigation": 10, "magicalMitigation": 10 },
+        { "id": "SCH_FEY_ILLUMINATION", "name": "フェイイルミネーション", "job": "学者", "role": null, "castTime": 0, "recast": 120, "duration": 20, "type": "軽減", "magicalMitigation": 5 }
+      ]
+    },
+    {
+      "id": "astrologian",
+      "name": "占星術師",
+      "role": "Healer",
+      "color": "#22C55E",
+      "skills": [
+        { "id": "AST_EARTHLY_STAR", "name": "アーサリースター", "job": "占星術師", "role": null, "recast": 60, "duration": 20, "type": "バフ" },
+        { "id": "AST_COLLECTIVE", "name": "運命の輪", "job": "占星術師", "role": null, "recast": 60, "duration": 15, "type": "軽減", "physicalMitigation": 10, "magicalMitigation": 10 },
+        { "id": "AST_NEUTRAL_SECT", "name": "ニュートラルセクト", "job": "占星術師", "role": null, "recast": 120, "duration": 20, "type": "バリア" },
+        { "id": "AST_MACROCOSMOS", "name": "マクロコスモス", "job": "占星術師", "role": null, "recast": 180, "duration": 15, "type": "バフ" }
+      ]
+    },
+    {
+      "id": "sage",
+      "name": "賢者",
+      "role": "Healer",
+      "color": "#22C55E",
+      "skills": [
+        { "id": "SGE_KERACHOLE", "name": "ケーラコレ", "job": "賢者", "role": null, "recast": 30, "duration": 15, "type": "軽減", "physicalMitigation": 10, "magicalMitigation": 10 },
+        { "id": "SGE_HOLOS", "name": "ホーリズム", "job": "賢者", "role": null, "recast": 120, "duration": 20, "type": "軽減", "physicalMitigation": 10, "magicalMitigation": 10 },
+        { "id": "SGE_PANHAIMA", "name": "パンハイマ", "job": "賢者", "role": null, "recast": 120, "duration": 15, "type": "バリア" },
+        { "id": "SGE_PNEUMA", "name": "プネウマ", "job": "賢者", "role": null, "recast": 120, "duration": 0, "type": "バフ" }
+      ]
+    },
+    {
+      "id": "monk",
+      "name": "モンク",
+      "role": "DPS",
+      "color": "#EF4444",
+      "skills": [
+        { "id": "MNK_MANTRA", "name": "マントラ", "job": "モンク", "role": null, "recast": 90, "duration": 15, "type": "バフ" }
+      ]
+    },
+    {
+      "id": "dragoon",
+      "name": "竜騎士",
+      "role": "DPS",
+      "color": "#EF4444",
+      "skills": []
+    },
+    {
+      "id": "ninja",
+      "name": "忍者",
+      "role": "DPS",
+      "color": "#EF4444",
+      "skills": [
+        { "id": "NIN_SHADE_SHIFT", "name": "残影", "job": "忍者", "role": null, "recast": 120, "duration": 20, "type": "軽減" }
+      ]
+    },
+    {
+      "id": "samurai",
+      "name": "侍",
+      "role": "DPS",
+      "color": "#EF4444",
+      "skills": []
+    },
+    {
+      "id": "reaper",
+      "name": "リーパー",
+      "role": "DPS",
+      "color": "#EF4444",
+      "skills": [
+        { "id": "RPR_ARCANE_CREST", "name": "アルケインクレスト", "job": "リーパー", "role": null, "recast": 30, "duration": 5, "type": "バリア" }
+      ]
+    },
+    {
+      "id": "viper",
+      "name": "ヴァイパー",
+      "role": "DPS",
+      "color": "#EF4444",
+      "skills": []
+    },
+    {
+      "id": "bard",
+      "name": "吟遊詩人",
+      "role": "DPS",
+      "color": "#EF4444",
+      "skills": [
+        { "id": "BRD_TROUBADOUR", "name": "トルバドゥール", "job": "吟遊詩人", "role": null, "recast": 120, "duration": 15, "type": "軽減", "physicalMitigation": 10, "magicalMitigation": 10 },
+        { "id": "BRD_NATURES_MINNE", "name": "地神のミンネ", "job": "吟遊詩人", "role": null, "recast": 120, "duration": 15, "type": "バフ", "buffPower": 15 }
+      ]
+    },
+    {
+      "id": "machinist",
+      "name": "機工士",
+      "role": "DPS",
+      "color": "#EF4444",
+      "skills": [
+        { "id": "MCH_TACTICIAN", "name": "タクティシャン", "job": "機工士", "role": null, "recast": 120, "duration": 15, "type": "軽減", "physicalMitigation": 10, "magicalMitigation": 10 },
+        { "id": "MCH_DISMANTLE", "name": "ウェポンブレイク", "job": "機工士", "role": null, "recast": 120, "duration": 10, "type": "軽減", "physicalMitigation": 10, "magicalMitigation": 10 }
+      ]
+    },
+    {
+      "id": "dancer",
+      "name": "踊り子",
+      "role": "DPS",
+      "color": "#EF4444",
+      "skills": [
+        { "id": "DNC_SHIELD_SAMBA", "name": "守りのサンバ", "job": "踊り子", "role": null, "recast": 120, "duration": 15, "type": "軽減", "physicalMitigation": 10, "magicalMitigation": 10 },
+        { "id": "DNC_IMPROVISATION", "name": "インプロビゼーション", "job": "踊り子", "role": null, "recast": 120, "duration": 15, "type": "バリア" }
+      ]
+    },
+    {
+      "id": "blackmage",
+      "name": "黒魔道士",
+      "role": "DPS",
+      "color": "#EF4444",
+      "skills": [
+        { "id": "BLM_MANAWARD", "name": "マバリア", "job": "黒魔道士", "role": null, "recast": 120, "duration": 20, "type": "バリア" }
+      ]
+    },
+    {
+      "id": "summoner",
+      "name": "召喚士",
+      "role": "DPS",
+      "color": "#EF4444",
+      "skills": []
+    },
+    {
+      "id": "redmage",
+      "name": "赤魔道士",
+      "role": "DPS",
+      "color": "#EF4444",
+      "skills": [
+        { "id": "RDM_MAGICK_BARRIER", "name": "バマジク", "job": "赤魔道士", "role": null, "recast": 120, "duration": 10, "type": "軽減", "magicalMitigation": 10 }
+      ]
+    },
+    {
+      "id": "pictomancer",
+      "name": "ピクトマンサー",
+      "role": "DPS",
+      "color": "#EF4444",
+      "skills": [
+        { "id": "PCT_TEMPERA_COAT", "name": "テンペラコート", "job": "ピクトマンサー", "role": null, "recast": 120, "duration": 10, "type": "バリア" }
+      ]
+    }
+  ],
+  "roleSkills": {
+    "Tank": [
+      { "id": "TANK_REPRISAL", "name": "リプライザル", "job": null, "role": "Tank", "recast": 60, "duration": 15, "type": "軽減", "physicalMitigation": 10, "magicalMitigation": 10 },
+      { "id": "TANK_RAMPART", "name": "ランパート", "job": null, "role": "Tank", "recast": 90, "duration": 20, "type": "軽減", "physicalMitigation": 20, "magicalMitigation": 20 },
+      { "id": "TANK_ARM_LENGTH", "name": "アームズレングス", "job": null, "role": "Tank", "recast": 120, "duration": 6, "type": "軽減", "physicalMitigation": 20 }
+    ],
+    "Healer": [
+      { "id": "HEALER_SWIFTCAST", "name": "迅速魔", "job": null, "role": "Healer", "recast": 60, "duration": 10, "type": "バフ" },
+      { "id": "HEALER_SURECAST", "name": "堅実魔", "job": null, "role": "Healer", "recast": 120, "duration": 6, "type": "軽減" }
+    ],
+    "DPS": [
+      { "id": "DPS_FEINT", "name": "牽制", "job": null, "role": "DPS", "recast": 90, "duration": 15, "type": "軽減", "physicalMitigation": 10 },
+      { "id": "DPS_ADDLE", "name": "アドル", "job": null, "role": "DPS", "recast": 90, "duration": 15, "type": "軽減", "magicalMitigation": 10 }
+    ]
+  },
+  "commonSkills": [
+    { "id": "COMMON_TINCTURE", "name": "薬", "job": null, "role": null, "recast": 270, "duration": 30, "type": "薬" }
+  ]
+}
