@@ -1,5 +1,117 @@
 # リリースノート
 
+## 2026-01-24
+
+### 破壊的変更
+
+#### タイムラインデータのミリ秒精度への完全移行
+- **すべての時間データをミリ秒単位に変更しました**
+- FFLogsのデータと完全一致する精度を実現（6.5秒 → 6530ms）
+- 既存の秒単位データとの互換性はありません（データの再生成が必要）
+
+### 新機能
+
+#### ギミック拡張機能の実装
+- **UI表示の強化**
+  - 危険度（Severity）に基づく色分け表示
+    - 低（low）= 青色、中（medium）= 黄色、高（high）= オレンジ、即死級（fatal）= 赤色
+  - カテゴリアイコンの追加（全体攻撃🌊、タンクバスター🛡️、頭割り🤝など）
+  - 拡張ツールチップでメタデータ表示（カテゴリ、危険度、軽減推奨度、ターゲット、説明、ギミック要素）
+
+- **軽減計画の自動提案**
+  - 必須軽減タイミングのハイライト（`mitigation: required` のギミックに赤いリングとアニメーション）
+  - 無敵必須箇所の警告（`mitigation: invuln` のギミックに⚡アイコン表示）
+
+- **ロール別ビュー**
+  - フィルタパネルの追加（ヘッダー右側）
+  - タンク向け、ヒーラー向け、DPS向けギミックのフィルタリング
+  - カテゴリ、危険度、軽減推奨度による複合フィルタ
+
+- **攻略ガイドの自動生成**
+  - Markdown形式で攻略ガイドをエクスポート
+  - フェーズごとにギミック情報を整理
+  - メタデータテーブル、説明、ギミック要素を含む詳細なガイド
+
+#### タイムライン表示の改善
+- **デフォルトズームを2.5倍に変更** (1秒=25px)
+  - より広いスケールでギミック同士の間隔が見やすく
+- **キャスト終了位置に発動マーカーを追加**
+  - 白い縦線でキャスト終了＝攻撃発動タイミングを明示
+  - ホバー時に発動時刻をツールチップ表示
+
+### 技術的改善
+
+#### 時間管理の精度向上
+- **型定義の更新**
+  - `Content.duration`: 秒 → ミリ秒
+  - `Phase.startTime/endTime`: 秒 → ミリ秒
+  - `Gimmick.time/castDuration`: 秒 → ミリ秒
+  - `BurstTiming.startTime/endTime`: 秒 → ミリ秒
+  - `TimelineMemo.time`: 秒 → ミリ秒
+
+- **時間フォーマット関数の追加**
+  - `formatTime(timeMs)`: MM:SS.s 形式（例: "1:23.4"）
+  - `formatSeconds(timeMs)`: 秒.s 形式（例: "23.4s"）
+  - `formatSecondsPrecise(timeMs)`: 秒.sss 形式（デバッグ用）
+  - `formatTimeDetailed(timeMs)`: M分S.s秒 形式
+
+- **uiStoreの変換関数を更新**
+  - `timeToPixel(timeMs)`: ミリ秒をピクセル位置に変換
+  - `pixelToTime(pixel)`: ピクセル位置をミリ秒に変換
+
+#### データ生成の改善
+- **generate-timeline.jsをミリ秒精度に変更**
+  - FFLogsのタイムスタンプをそのまま使用（丸め処理を削除）
+  - フェーズ区切りをミリ秒単位で管理（120000ms = 120秒）
+  - より正確なタイムライン生成が可能に
+
+### データ
+
+#### アルカディア零式3層のデータ更新
+- ミリ秒精度でタイムラインを再生成
+- メタデータを保持したまま時間精度のみ更新
+- 97個のギミック中39個にメタデータ付与済み
+- FFLogsとの誤差が30ms以下に改善（従来は最大100ms）
+
+### セキュリティ対応
+
+#### OWASP準拠
+- 型安全性: TypeScriptの型システムで時間データの整合性を保証
+- 入力値検証: ミリ秒単位の時間データは厳密に数値型で管理
+- XSS対策: メタデータの説明文はVueテンプレートで自動エスケープ
+- データ整合性: 時間精度の一貫性により計算誤差を排除
+
+### 変更されたファイル
+
+#### 新規作成
+- `src/stores/gimmickFilterStore.ts` - フィルタ状態管理
+- `src/utils/gimmickStyles.ts` - 色分けルール、アイコン、ラベル定義
+- `src/utils/guideExporter.ts` - Markdownエクスポートロジック
+- `src/components/timeline/GimmickFilterPanel.vue` - フィルタUIコンポーネント
+- `src/components/ui/GimmickTooltip.vue` - 拡張ツールチップコンポーネント
+- `01_docs/merge-metadata.js` - メタデータマージスクリプト
+- `01_docs/check-precision.js` - タイムスタンプ精度確認スクリプト
+
+#### 更新
+- `src/types/content.ts` - すべての時間フィールドをミリ秒に変更
+- `src/utils/timeFormat.ts` - ミリ秒対応のフォーマット関数を追加
+- `src/stores/uiStore.ts` - 時間⇔ピクセル変換をミリ秒対応に
+- `src/components/timeline/GimmickRow.vue` - 色分け、アイコン、ツールチップ、発動マーカー追加
+- `src/components/timeline/TimeAxisRow.vue` - 目盛り間隔をミリ秒に変更
+- `src/components/timeline/PhaseDividers.vue` - フェーズ最小時間を1000msに変更
+- `src/components/AppHeader.vue` - フィルタパネルと攻略ガイドエクスポートボタン追加
+- `01_docs/generate-timeline.js` - ミリ秒精度でデータ生成するように変更
+- `04_implementation/public/data/contents/アルカディア・ヘビー級零式/3層.json` - ミリ秒精度で再生成
+
+### 今後の予定
+
+#### ミリ秒精度対応の残タスク
+- 他の層（1層、2層、4層）のデータをミリ秒精度で再生成
+- パーティスキルの時間管理をミリ秒に統一
+- 編集モードでのギミック追加時の時間スナップをミリ秒対応
+
+---
+
 ## 2026-01-22
 
 ### 新機能

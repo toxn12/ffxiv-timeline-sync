@@ -44,8 +44,8 @@ function handleMouseDown(divider: typeof dividers.value[0], e: MouseEvent) {
     if (phaseIndex > 0) {
       const prevPhase = phases.value[phaseIndex - 1]
       const currentPhase = phases.value[phaseIndex]
-      const minTime = prevPhase.startTime + 1 // 最低1秒
-      const maxTime = currentPhase.endTime - 1 // 最低1秒残す
+      const minTime = prevPhase.startTime + 1000 // 最低1秒（1000ms）
+      const maxTime = currentPhase.endTime - 1000 // 最低1秒残す
       const clampedTime = Math.max(minTime, Math.min(maxTime, newTime))
 
       draggingTime.value = clampedTime

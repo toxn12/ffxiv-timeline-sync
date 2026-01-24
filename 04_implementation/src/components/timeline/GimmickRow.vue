@@ -1,12 +1,18 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { useContentStore, useUIStore } from '@/stores'
+import { useGimmickFilterStore } from '@/stores/gimmickFilterStore'
+import { getGimmickColorClass, getCategoryIcon } from '@/utils/gimmickStyles'
+import { formatSeconds } from '@/utils/timeFormat'
 import ContextMenu, { type ContextMenuItem } from '@/components/ui/ContextMenu.vue'
+import GimmickTooltip from '@/components/ui/GimmickTooltip.vue'
 
 const contentStore = useContentStore()
 const uiStore = useUIStore()
+const filterStore = useGimmickFilterStore()
 
-const gimmicks = computed(() => contentStore.gimmicks)
+// フィルタ適用済みギミック一覧を使用
+const gimmicks = computed(() => filterStore.filteredGimmicks)
 
 const editingGimmickId = ref<string | null>(null)
 const editingName = ref('')
@@ -18,9 +24,13 @@ const contextMenu = ref<{ x: number; y: number; gimmickId: string } | null>(null
 const editingMemoGimmickId = ref<string | null>(null)
 const editingMemo = ref('')
 
-// ツールチップ表示
+// ツールチップ表示（拡張ツールチップ用）
 const hoveredGimmickId = ref<string | null>(null)
 const tooltipPosition = ref<{ x: number; y: number }>({ x: 0, y: 0 })
+const hoveredGimmick = computed(() => {
+  if (!hoveredGimmickId.value) return null
+  return gimmicks.value.find(g => g.id === hoveredGimmickId.value)
+})
 
 function getStyle(gimmick: typeof gimmicks.value[0]) {
   const width = Math.max(uiStore.timeToPixel(gimmick.castDuration), 60)
@@ -32,6 +42,11 @@ function getStyle(gimmick: typeof gimmicks.value[0]) {
 
 function isSelected(gimmickId: string) {
   return uiStore.selectedObjectId === gimmickId && uiStore.selectedObjectType === 'gimmick'
+}
+
+// 高優先度ギミック（必須軽減・無敵推奨）
+function isHighPriority(gimmick: typeof gimmicks.value[0]) {
+  return gimmick.mitigation === 'required' || gimmick.mitigation === 'invuln'
 }
 
 function handleClick(gimmickId: string, e: MouseEvent) {
@@ -89,9 +104,9 @@ function handleResizeMouseDown(gimmick: typeof gimmicks.value[0], e: MouseEvent)
 
   const handleMouseMove = (moveEvent: MouseEvent) => {
     const deltaX = moveEvent.clientX - resizeStartX
-    const deltaDuration = uiStore.pixelToTime(deltaX)
-    const newDuration = Math.max(1, resizeStartDuration + deltaDuration)
-    resizingDuration.value = Math.round(newDuration * 10) / 10 // 0.1秒単位に丸める
+    const deltaDuration = uiStore.pixelToTime(deltaX) // ミリ秒
+    const newDuration = Math.max(100, resizeStartDuration + deltaDuration) // 最小100ms
+    resizingDuration.value = Math.round(newDuration / 100) * 100 // 100ms単位に丸める
     contentStore.updateGimmick({
       id: gimmick.id,
       castDuration: resizingDuration.value
@@ -160,15 +175,16 @@ function cancelMemoEdit() {
 }
 
 function handleMouseEnter(gimmick: typeof gimmicks.value[0], e: MouseEvent) {
-  if (gimmick.memo) {
+  // メモまたはメタデータがある場合にツールチップを表示
+  if (gimmick.memo || gimmick.category || gimmick.severity || gimmick.mitigation) {
     hoveredGimmickId.value = gimmick.id
-    tooltipPosition.value = { x: e.clientX, y: e.clientY }
+    tooltipPosition.value = { x: e.clientX + 10, y: e.clientY + 10 }
   }
 }
 
 function handleMouseMove(gimmick: typeof gimmicks.value[0], e: MouseEvent) {
-  if (gimmick.memo && hoveredGimmickId.value === gimmick.id) {
-    tooltipPosition.value = { x: e.clientX, y: e.clientY }
+  if (hoveredGimmickId.value === gimmick.id) {
+    tooltipPosition.value = { x: e.clientX + 10, y: e.clientY + 10 }
   }
 }
 
@@ -212,11 +228,13 @@ function handleMouseDown(gimmick: typeof gimmicks.value[0], e: MouseEvent) {
     <div
       v-for="gimmick in gimmicks"
       :key="gimmick.id"
-      class="absolute top-1 h-6 bg-purple-600 rounded flex items-center px-2 text-xs text-white truncate"
+      class="absolute top-1 h-6 rounded flex items-center px-2 text-xs text-white truncate"
       :class="[
+        getGimmickColorClass(gimmick),
         isSelected(gimmick.id) ? 'ring-2 ring-yellow-400' : '',
+        isHighPriority(gimmick) ? 'ring-2 ring-red-500 animate-pulse' : '',
         uiStore.isEditMode ? 'cursor-move hover:brightness-110' : '',
-        gimmick.memo ? 'ring-1 ring-yellow-500/50' : ''
+        gimmick.memo && !isHighPriority(gimmick) ? 'ring-1 ring-yellow-500/50' : ''
       ]"
       :style="getStyle(gimmick)"
       @click="handleClick(gimmick.id, $event)"
@@ -227,6 +245,11 @@ function handleMouseDown(gimmick: typeof gimmicks.value[0], e: MouseEvent) {
       @mousemove="handleMouseMove(gimmick, $event)"
       @mouseleave="handleMouseLeave"
     >
+      <!-- 発動マーカー（キャスト終了位置） -->
+      <div
+        class="absolute right-0 top-0 h-full w-1 bg-white opacity-75 pointer-events-none"
+        :title="`発動: ${formatSeconds(gimmick.time + gimmick.castDuration)}`"
+      />
       <input
         v-if="editingGimmickId === gimmick.id"
         v-model="editingName"
@@ -235,9 +258,17 @@ function handleMouseDown(gimmick: typeof gimmicks.value[0], e: MouseEvent) {
         @keydown.enter="finishEditing"
         @click.stop
       />
-      <span v-else class="truncate">{{ gimmick.name }}</span>
-      <!-- メモアイコン -->
-      <span v-if="gimmick.memo" class="ml-1 text-yellow-400 flex-shrink-0">📝</span>
+      <template v-else>
+        <!-- カテゴリアイコン -->
+        <span v-if="getCategoryIcon(gimmick.category)" class="mr-1 flex-shrink-0">
+          {{ getCategoryIcon(gimmick.category) }}
+        </span>
+        <span class="truncate">{{ gimmick.name }}</span>
+        <!-- 無敵推奨アイコン -->
+        <span v-if="gimmick.mitigation === 'invuln'" class="ml-1 flex-shrink-0">⚡</span>
+        <!-- メモアイコン -->
+        <span v-if="gimmick.memo" class="ml-1 text-yellow-400 flex-shrink-0">📝</span>
+      </template>
 
       <!-- リサイズハンドル（編集モード時のみ） -->
       <div
@@ -251,7 +282,7 @@ function handleMouseDown(gimmick: typeof gimmicks.value[0], e: MouseEvent) {
         v-if="resizingGimmickId === gimmick.id && resizingDuration !== null"
         class="absolute -top-6 right-0 bg-gray-900 text-white text-xs px-2 py-1 rounded whitespace-nowrap"
       >
-        {{ resizingDuration.toFixed(1) }}秒
+        {{ formatSeconds(resizingDuration) }}
       </div>
     </div>
 
@@ -264,19 +295,12 @@ function handleMouseDown(gimmick: typeof gimmicks.value[0], e: MouseEvent) {
       @close="contextMenu = null"
     />
 
-    <!-- メモツールチップ -->
-    <Teleport to="body">
-      <div
-        v-if="hoveredGimmickId"
-        class="fixed z-50 bg-gray-900 border border-gray-600 rounded px-3 py-2 text-sm text-white max-w-xs whitespace-pre-wrap pointer-events-none"
-        :style="{
-          left: `${tooltipPosition.x + 10}px`,
-          top: `${tooltipPosition.y + 10}px`
-        }"
-      >
-        {{ gimmicks.find(g => g.id === hoveredGimmickId)?.memo }}
-      </div>
-    </Teleport>
+    <!-- 拡張ツールチップ -->
+    <GimmickTooltip
+      v-if="hoveredGimmick"
+      :gimmick="hoveredGimmick"
+      :position="tooltipPosition"
+    />
 
     <!-- メモ編集モーダル -->
     <Teleport to="body">

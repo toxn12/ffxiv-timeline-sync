@@ -1,0 +1,2032 @@
+{
+  "id": "ザ-タイラント",
+  "raidName": "アルカディア・ヘビー級零式",
+  "bossName": "3層（ザ・タイラント）",
+  "duration": 615,
+  "targets": [
+    "ボス"
+  ],
+  "phases": [
+    {
+      "id": "phase-1",
+      "name": "フェーズ1",
+      "startTime": 0,
+      "endTime": 120,
+      "color": "#60A5FA"
+    },
+    {
+      "id": "phase-2",
+      "name": "フェーズ2",
+      "startTime": 120,
+      "endTime": 240,
+      "color": "#34D399"
+    },
+    {
+      "id": "phase-3",
+      "name": "フェーズ3",
+      "startTime": 240,
+      "endTime": 360,
+      "color": "#FBBF24"
+    },
+    {
+      "id": "phase-4",
+      "name": "フェーズ4",
+      "startTime": 360,
+      "endTime": 480,
+      "color": "#F87171"
+    },
+    {
+      "id": "phase-5",
+      "name": "フェーズ5",
+      "startTime": 480,
+      "endTime": 600,
+      "color": "#A78BFA"
+    },
+    {
+      "id": "phase-6",
+      "name": "フェーズ6",
+      "startTime": 600,
+      "endTime": 615,
+      "color": "#60A5FA"
+    }
+  ],
+  "gimmicks": [
+    {
+      "id": "gimmick-1",
+      "name": "キング・オブ・アルカディア",
+      "time": 6.5,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-2",
+      "name": "キング・オブ・アルカディア(2)",
+      "time": 11.5,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-3",
+      "name": "ウェポンジェネレート：バスター",
+      "time": 16.7,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-4",
+      "name": "ウェポンジェネレート：バスター(2)",
+      "time": 18.7,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-5",
+      "name": "ウェポンバスター",
+      "time": 24.8,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-6",
+      "name": "ウェポンバスター",
+      "time": 25,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-7",
+      "name": "ウェポンバスター",
+      "time": 26.2,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-9",
+      "name": "トロフィーウェポンズ",
+      "time": 36.4,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-10",
+      "name": "トロフィーウェポンズ(2)",
+      "time": 39.4,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-11",
+      "name": "ウェポンアサルト",
+      "time": 42.9,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-12",
+      "name": "ウェポンアサルト(2)",
+      "time": 48.9,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-13",
+      "name": "ウェポンアサルト",
+      "time": 49.2,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-14",
+      "name": "ウェポンアサルト",
+      "time": 49.2,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-15",
+      "name": "重打撃",
+      "time": 51,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-16",
+      "name": "ウェポンアサルト(2)",
+      "time": 51.1,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-17",
+      "name": "ウェポンアサルト",
+      "time": 54.3,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-18",
+      "name": "ウェポンアサルト",
+      "time": 54.3,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-19",
+      "name": "斬波",
+      "time": 56.1,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-20",
+      "name": "ウェポンアサルト(2)",
+      "time": 56.3,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-21",
+      "name": "ウェポンアサルト",
+      "time": 59.5,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-22",
+      "name": "ウェポンアサルト",
+      "time": 59.5,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-23",
+      "name": "重斬波",
+      "time": 61.3,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-24",
+      "name": "ウェポンアサルト(2)",
+      "time": 61.5,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-26",
+      "name": "トロフィーウェポンズ(3)",
+      "time": 70.8,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-27",
+      "name": "トロフィーウェポンズ(4)",
+      "time": 73.7,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-28",
+      "name": "コメットレイン",
+      "time": 76.9,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-29",
+      "name": "コメットレイン(2)",
+      "time": 80.9,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-30",
+      "name": "プチコメット",
+      "time": 82.1,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-31",
+      "name": "プチコメット(2)",
+      "time": 84.1,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-32",
+      "name": "プチコメット(3)",
+      "time": 85.1,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-33",
+      "name": "ヘビーコメット",
+      "time": 86.1,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-34",
+      "name": "プチコメット(4)",
+      "time": 87.1,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-35",
+      "name": "ウェポンアサルト(3)",
+      "time": 87.8,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-36",
+      "name": "ヘビーコメット(2)",
+      "time": 91.1,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-37",
+      "name": "ウェポンアサルト(4)",
+      "time": 93.8,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-38",
+      "name": "ウェポンアサルト(2)",
+      "time": 94.1,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-39",
+      "name": "ウェポンアサルト(3)",
+      "time": 94.1,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-40",
+      "name": "重斬波(2)",
+      "time": 95.9,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-41",
+      "name": "ウェポンアサルト(4)",
+      "time": 96.1,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-42",
+      "name": "ウェポンアサルト(2)",
+      "time": 99.2,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-43",
+      "name": "ウェポンアサルト(3)",
+      "time": 99.2,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-44",
+      "name": "重打撃(2)",
+      "time": 101,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-45",
+      "name": "ウェポンアサルト(4)",
+      "time": 101.2,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-46",
+      "name": "ウェポンアサルト(2)",
+      "time": 104.4,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-47",
+      "name": "ウェポンアサルト(3)",
+      "time": 104.4,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-48",
+      "name": "斬波(2)",
+      "time": 106.2,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-49",
+      "name": "ウェポンアサルト(4)",
+      "time": 106.3,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-50",
+      "name": "プチコメット(5)",
+      "time": 108.5,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-51",
+      "name": "プチコメット(6)",
+      "time": 110.6,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-52",
+      "name": "プチコメット(7)",
+      "time": 111.5,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-53",
+      "name": "コメット",
+      "time": 112.6,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-54",
+      "name": "プチコメット(8)",
+      "time": 113.5,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-55",
+      "name": "コメット(2)",
+      "time": 117.5,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-56",
+      "name": "キング・オブ・アルカディア(3)",
+      "time": 118.6,
+      "castDuration": 3,
+      "phaseId": "phase-1"
+    },
+    {
+      "id": "gimmick-57",
+      "name": "キング・オブ・アルカディア(4)",
+      "time": 123.6,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-59",
+      "name": "ウェポンジェネレート：ドミネーション",
+      "time": 134.1,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-60",
+      "name": "ウェポンジェネレート：ドミネーション(2)",
+      "time": 136.1,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-61",
+      "name": "ダンス・オブ・ドミネーション",
+      "time": 142.3,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-62",
+      "name": "ダンス・オブ・ドミネーション",
+      "time": 142.3,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-63",
+      "name": "ダンス・オブ・ドミネーション(2)",
+      "time": 142.8,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-64",
+      "name": "ダンス・オブ・ドミネーション",
+      "time": 143.4,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-65",
+      "name": "ダンス・オブ・ドミネーション(2)",
+      "time": 144,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-66",
+      "name": "ダンス・オブ・ドミネーション(3)",
+      "time": 144.6,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-67",
+      "name": "ダンス・オブ・ドミネーション(4)",
+      "time": 145.2,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-68",
+      "name": "ダンス・オブ・ドミネーション(5)",
+      "time": 145.7,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-69",
+      "name": "ザ・ハリケーン",
+      "time": 146.9,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-70",
+      "name": "ダンス・オブ・ドミネーション",
+      "time": 146.9,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-71",
+      "name": "爆発",
+      "time": 147.1,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-72",
+      "name": "ザ・ハリケーン(2)",
+      "time": 151.8,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-73",
+      "name": "爆発(2)",
+      "time": 152.5,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-74",
+      "name": "ウェポンジェネレート：バスター",
+      "time": 156,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-75",
+      "name": "ウェポンジェネレート：バスター(2)",
+      "time": 158,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-76",
+      "name": "ウェポンバスター",
+      "time": 164.1,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-77",
+      "name": "ウェポンバスター",
+      "time": 164.3,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-78",
+      "name": "衝撃",
+      "time": 165.5,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-80",
+      "name": "ザ・ミールストーム",
+      "time": 175.9,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-81",
+      "name": "ザ・ミールストーム(2)",
+      "time": 180.9,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-82",
+      "name": "アルティメット・トロフィーウェポンズ",
+      "time": 183.6,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-83",
+      "name": "アルティメット・トロフィーウェポンズ(2)",
+      "time": 186.5,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-84",
+      "name": "ウェポンアバランチ",
+      "time": 189.4,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-85",
+      "name": "ウェポンアバランチ(2)",
+      "time": 194.4,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-86",
+      "name": "ウェポンアサルト(3)",
+      "time": 194.6,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-87",
+      "name": "ウェポンアサルト(5)",
+      "time": 194.6,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-88",
+      "name": "斬波(3)",
+      "time": 196.5,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-89",
+      "name": "斬波(4)",
+      "time": 196.5,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-90",
+      "name": "ウェポンアサルト(6)",
+      "time": 196.6,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-91",
+      "name": "ウェポンアサルト(3)",
+      "time": 199.8,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-92",
+      "name": "ウェポンアサルト(5)",
+      "time": 199.8,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-93",
+      "name": "重打撃(3)",
+      "time": 201.6,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-94",
+      "name": "ウェポンアサルト(6)",
+      "time": 201.7,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-95",
+      "name": "ウェポンアサルト(3)",
+      "time": 204.9,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-96",
+      "name": "ウェポンアサルト(5)",
+      "time": 204.9,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-97",
+      "name": "重斬波(3)",
+      "time": 206.8,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-98",
+      "name": "ウェポンアサルト(6)",
+      "time": 206.9,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-99",
+      "name": "ウェポンアサルト(4)",
+      "time": 210,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-100",
+      "name": "ウェポンアサルト(7)",
+      "time": 210,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-101",
+      "name": "重斬波(4)",
+      "time": 211.9,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-102",
+      "name": "ウェポンアサルト(8)",
+      "time": 212,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-103",
+      "name": "ウェポンアサルト(4)",
+      "time": 215.2,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-104",
+      "name": "ウェポンアサルト(7)",
+      "time": 215.2,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-105",
+      "name": "斬波(5)",
+      "time": 217,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-106",
+      "name": "斬波(6)",
+      "time": 217,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-107",
+      "name": "ウェポンアサルト(8)",
+      "time": 217.1,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-108",
+      "name": "ウェポンアサルト(4)",
+      "time": 220.3,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-109",
+      "name": "ウェポンアサルト(7)",
+      "time": 220.3,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-110",
+      "name": "重打撃(4)",
+      "time": 222.1,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-111",
+      "name": "ウェポンアサルト(8)",
+      "time": 222.3,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-113",
+      "name": "イモータルレイン",
+      "time": 226.6,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-114",
+      "name": "強風",
+      "time": 228.6,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-115",
+      "name": "強風(2)",
+      "time": 228.6,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-116",
+      "name": "イモータルレイン(2)",
+      "time": 229.6,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-117",
+      "name": "ワン・アンド・オンリー",
+      "time": 233.7,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-118",
+      "name": "ワン・アンド・オンリー",
+      "time": 233.7,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-119",
+      "name": "ワン・アンド・オンリー(2)",
+      "time": 239.7,
+      "castDuration": 3,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-120",
+      "name": "ワン・アンド・オンリー(2)",
+      "time": 242.7,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-121",
+      "name": "ファイアストリーム",
+      "time": 249.9,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-122",
+      "name": "ファイアストリーム(2)",
+      "time": 254.9,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-123",
+      "name": "ファイアストリーム",
+      "time": 255.1,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-124",
+      "name": "爆発",
+      "time": 255.9,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-125",
+      "name": "ファイアストリーム(2)",
+      "time": 258.4,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-126",
+      "name": "爆発(2)",
+      "time": 258.9,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-127",
+      "name": "爆発(3)",
+      "time": 259.2,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-128",
+      "name": "爆発(4)",
+      "time": 262.1,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-129",
+      "name": "オービタルライン",
+      "time": 263.5,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-130",
+      "name": "オービタルライン(2)",
+      "time": 268.5,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-131",
+      "name": "オービタルライン",
+      "time": 271.6,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-132",
+      "name": "ファイア・アンド・テイル",
+      "time": 273.1,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-133",
+      "name": "ファイア・アンド・テイル",
+      "time": 273.1,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-134",
+      "name": "オービタルライン(2)",
+      "time": 273.2,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-135",
+      "name": "オービタルライン(3)",
+      "time": 274.7,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-136",
+      "name": "オービタルライン(4)",
+      "time": 276.2,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-137",
+      "name": "ファイア・アンド・テイル(2)",
+      "time": 277.1,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-138",
+      "name": "オービタルライン(5)",
+      "time": 277.6,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-139",
+      "name": "ファイア・アンド・テイル(2)",
+      "time": 278.1,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-140",
+      "name": "オービタルライン(6)",
+      "time": 279.2,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-141",
+      "name": "オービタルライン(7)",
+      "time": 280.7,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-142",
+      "name": "オービタルライン(8)",
+      "time": 282.1,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-144",
+      "name": "メテオレイン",
+      "time": 289.5,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-145",
+      "name": "メテオレイン(2)",
+      "time": 294.5,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-146",
+      "name": "ビッグファイア",
+      "time": 297.2,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-147",
+      "name": "ビッグファイア(2)",
+      "time": 302.1,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-148",
+      "name": "ビッグファイア",
+      "time": 302.6,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-149",
+      "name": "着弾",
+      "time": 303.7,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-150",
+      "name": "ビッグファイア(3)",
+      "time": 307.2,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-151",
+      "name": "フェイタルライン",
+      "time": 311.7,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-152",
+      "name": "ビッグファイア(4)",
+      "time": 312.2,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-153",
+      "name": "ビッグファイア(2)",
+      "time": 312.6,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-154",
+      "name": "爆発",
+      "time": 313.4,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-155",
+      "name": "着弾(2)",
+      "time": 313.7,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-156",
+      "name": "爆発(2)",
+      "time": 316.4,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-157",
+      "name": "ビッグファイア(5)",
+      "time": 317.2,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-158",
+      "name": "フェイタルライン(2)",
+      "time": 321.8,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-159",
+      "name": "ビッグファイア(6)",
+      "time": 322.2,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-160",
+      "name": "ビッグファイア(3)",
+      "time": 322.6,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-161",
+      "name": "爆発(3)",
+      "time": 323.4,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-162",
+      "name": "着弾(3)",
+      "time": 323.8,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-163",
+      "name": "爆発(4)",
+      "time": 326.4,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-164",
+      "name": "ビッグファイア(7)",
+      "time": 327.2,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-165",
+      "name": "フェイタルライン(3)",
+      "time": 331.8,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-166",
+      "name": "ビッグファイア(8)",
+      "time": 332.2,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-167",
+      "name": "ビッグファイア(4)",
+      "time": 332.6,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-168",
+      "name": "爆発(5)",
+      "time": 333.4,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-169",
+      "name": "爆発(6)",
+      "time": 336.3,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-170",
+      "name": "トライスターズ・タイラントフォール",
+      "time": 336.5,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-171",
+      "name": "トライスターズ・タイラントフォール",
+      "time": 338.3,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-172",
+      "name": "トライスターズ・タイラントフォール(2)",
+      "time": 345.3,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-173",
+      "name": "衝撃波",
+      "time": 346.5,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-175",
+      "name": "衝撃波(2)",
+      "time": 348,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-177",
+      "name": "衝撃波(3)",
+      "time": 349.6,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-180",
+      "name": "フラットライナー",
+      "time": 358.8,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-181",
+      "name": "フラットライナー",
+      "time": 358.8,
+      "castDuration": 3,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-182",
+      "name": "フラットライナー(2)",
+      "time": 362.7,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-183",
+      "name": "フラットライナー(2)",
+      "time": 364.7,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-184",
+      "name": "チャンピオンズ・メテオ",
+      "time": 373.9,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-185",
+      "name": "チャンピオンズ・メテオ(2)",
+      "time": 378.9,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-186",
+      "name": "爆発",
+      "time": 382,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-187",
+      "name": "爆発(2)",
+      "time": 392,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-188",
+      "name": "ファイアブレス",
+      "time": 398.1,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-189",
+      "name": "チャンピオンズ・メテオ",
+      "time": 400,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-190",
+      "name": "チャンピオンズ・メテオ(2)",
+      "time": 402.1,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-191",
+      "name": "チャンピオンズ・メテオ(3)",
+      "time": 403,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-192",
+      "name": "チャンピオンズ・メテオ(4)",
+      "time": 404.1,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-193",
+      "name": "チャンピオンズ・メテオ(5)",
+      "time": 405.1,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-194",
+      "name": "ファイアブレス(2)",
+      "time": 406.1,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-195",
+      "name": "チャンピオンズ・メテオライン",
+      "time": 406.9,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-196",
+      "name": "ファイアブレス",
+      "time": 406.9,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-197",
+      "name": "チャンピオンズ・メテオ(6)",
+      "time": 407.1,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-198",
+      "name": "爆発(3)",
+      "time": 414.1,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-199",
+      "name": "爆発(4)",
+      "time": 424,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-200",
+      "name": "ファイアブレス(3)",
+      "time": 430.3,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-201",
+      "name": "チャンピオンズ・メテオ(7)",
+      "time": 432.1,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-202",
+      "name": "チャンピオンズ・メテオ(8)",
+      "time": 434.1,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-203",
+      "name": "チャンピオンズ・メテオ(9)",
+      "time": 435.1,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-204",
+      "name": "チャンピオンズ・メテオ(10)",
+      "time": 436.1,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-205",
+      "name": "チャンピオンズ・メテオ(11)",
+      "time": 436.1,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-206",
+      "name": "チャンピオンズ・メテオ(12)",
+      "time": 437.1,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-207",
+      "name": "ファイアブレス(4)",
+      "time": 438.2,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-208",
+      "name": "ファイアブレス(2)",
+      "time": 439,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-209",
+      "name": "ファイアブレス(3)",
+      "time": 439,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-210",
+      "name": "チャンピオンズ・メテオ(13)",
+      "time": 439.1,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-211",
+      "name": "チャンピオンズ・メテオ(14)",
+      "time": 439.1,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-212",
+      "name": "ヘビーメテオ",
+      "time": 443.4,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-213",
+      "name": "ヘビーメテオ(2)",
+      "time": 448.4,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-214",
+      "name": "ヘビーメテオ",
+      "time": 449.5,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-215",
+      "name": "ヘビーメテオ(2)",
+      "time": 451,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-216",
+      "name": "爆発(5)",
+      "time": 452.1,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-217",
+      "name": "ヘビーメテオ(3)",
+      "time": 452.5,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-218",
+      "name": "ヘビーメテオ(4)",
+      "time": 453.9,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-219",
+      "name": "ヘビーメテオ(5)",
+      "time": 455.4,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-220",
+      "name": "アルカディア・クラッシュ",
+      "time": 457.2,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-221",
+      "name": "アルカディア・クラッシュ",
+      "time": 457.2,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-222",
+      "name": "爆発(6)",
+      "time": 462.1,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-223",
+      "name": "アルカディア・クラッシュ(2)",
+      "time": 463.2,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-224",
+      "name": "大爆発",
+      "time": 463.2,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-225",
+      "name": "アルカディア・クラッシュ(2)",
+      "time": 472.7,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-226",
+      "name": "キング・オブ・アルカディア(5)",
+      "time": 478.3,
+      "castDuration": 3,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-227",
+      "name": "キング・オブ・アルカディア(6)",
+      "time": 483.3,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-228",
+      "name": "ファイアストリーム(3)",
+      "time": 489.5,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-229",
+      "name": "ファイアストリーム(4)",
+      "time": 494.5,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-230",
+      "name": "ファイアストリーム(3)",
+      "time": 494.8,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-231",
+      "name": "爆発(5)",
+      "time": 495.6,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-232",
+      "name": "ファイアストリーム(4)",
+      "time": 498,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-233",
+      "name": "爆発(6)",
+      "time": 498.6,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-234",
+      "name": "爆発(7)",
+      "time": 498.8,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-235",
+      "name": "爆発(8)",
+      "time": 501.8,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-236",
+      "name": "オービタルライン(3)",
+      "time": 503.2,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-237",
+      "name": "オービタルライン(4)",
+      "time": 508.1,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-238",
+      "name": "オービタルライン(9)",
+      "time": 511.3,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-239",
+      "name": "ファイア・アンド・テイル(3)",
+      "time": 512.8,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-240",
+      "name": "オービタルライン(10)",
+      "time": 512.8,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-241",
+      "name": "オービタルライン(11)",
+      "time": 514.3,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-242",
+      "name": "オービタルライン(12)",
+      "time": 515.9,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-243",
+      "name": "ファイア・アンド・テイル(4)",
+      "time": 516.8,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-244",
+      "name": "オービタルライン(13)",
+      "time": 517.3,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-245",
+      "name": "オービタルライン(14)",
+      "time": 518.8,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-246",
+      "name": "オービタルライン(15)",
+      "time": 520.3,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-247",
+      "name": "キング・オブ・アルカディア(7)",
+      "time": 521.1,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-248",
+      "name": "オービタルライン(16)",
+      "time": 521.9,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-249",
+      "name": "キング・オブ・アルカディア(8)",
+      "time": 526,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-251",
+      "name": "メテオスタンピード",
+      "time": 533.5,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-252",
+      "name": "メテオスタンピード(2)",
+      "time": 538.4,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-253",
+      "name": "ヒュージメテオ",
+      "time": 539.6,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-254",
+      "name": "ヒュージメテオ(2)",
+      "time": 545.6,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-255",
+      "name": "チャンピオンズ・メテオ",
+      "time": 545.6,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-256",
+      "name": "融解着弾",
+      "time": 545.6,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-257",
+      "name": "チャンピオンズ・メテオ(2)",
+      "time": 547.6,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-258",
+      "name": "チャンピオンズ・メテオ(3)",
+      "time": 548.6,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-259",
+      "name": "融解着弾(2)",
+      "time": 548.7,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-260",
+      "name": "チャンピオンズ・メテオ(4)",
+      "time": 549.6,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-261",
+      "name": "チャンピオンズ・メテオ(5)",
+      "time": 550.6,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-262",
+      "name": "チャンピオンズ・メテオ(6)",
+      "time": 551.6,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-263",
+      "name": "融解着弾(3)",
+      "time": 551.7,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-264",
+      "name": "チャンピオンズ・メテオ(7)",
+      "time": 552.6,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-265",
+      "name": "チャンピオンズ・メテオ(8)",
+      "time": 553.6,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-266",
+      "name": "チャンピオンズ・メテオ(9)",
+      "time": 554.6,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-267",
+      "name": "融解着弾(4)",
+      "time": 554.7,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-268",
+      "name": "チャンピオンズ・メテオ(10)",
+      "time": 555.6,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-269",
+      "name": "チャンピオンズ・メテオ(11)",
+      "time": 556.6,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-270",
+      "name": "着弾",
+      "time": 556.6,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-271",
+      "name": "融解着弾(5)",
+      "time": 557.6,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-272",
+      "name": "チャンピオンズ・メテオ(12)",
+      "time": 558.6,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-273",
+      "name": "融解着弾(6)",
+      "time": 560.7,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-274",
+      "name": "着弾(2)",
+      "time": 561.6,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-275",
+      "name": "ツーウェイ・スピンファイア",
+      "time": 568.7,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-276",
+      "name": "チャンピオンズ・メテオラース",
+      "time": 571.2,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-277",
+      "name": "チャンピオンズ・メテオラース(2)",
+      "time": 571.2,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-278",
+      "name": "ツーウェイ・スピンファイア(2)",
+      "time": 574.6,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-279",
+      "name": "ツーウェイ・スピンファイア",
+      "time": 575.4,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-280",
+      "name": "キング・オブ・アルカディア(9)",
+      "time": 578.8,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-281",
+      "name": "キング・オブ・アルカディア(10)",
+      "time": 583.8,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-284",
+      "name": "ハートブレイクキック",
+      "time": 591.3,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-285",
+      "name": "ハートブレイクキック(2)",
+      "time": 596.3,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-286",
+      "name": "ハートブレイクキック",
+      "time": 597.4,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-287",
+      "name": "ハートブレイクキック(2)",
+      "time": 599.4,
+      "castDuration": 3,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-288",
+      "name": "ハートブレイクキック(3)",
+      "time": 601.4,
+      "castDuration": 3,
+      "phaseId": "phase-6"
+    },
+    {
+      "id": "gimmick-289",
+      "name": "ハートブレイクキック(4)",
+      "time": 603.5,
+      "castDuration": 3,
+      "phaseId": "phase-6"
+    },
+    {
+      "id": "gimmick-290",
+      "name": "ハートブレイクキック(5)",
+      "time": 605.5,
+      "castDuration": 3,
+      "phaseId": "phase-6"
+    }
+  ],
+  "burstTimings": [
+    {
+      "id": "burst-1",
+      "name": "開幕",
+      "startTime": 0,
+      "endTime": 20
+    },
+    {
+      "id": "burst-2",
+      "name": "2分",
+      "startTime": 120,
+      "endTime": 140
+    },
+    {
+      "id": "burst-3",
+      "name": "4分",
+      "startTime": 240,
+      "endTime": 260
+    },
+    {
+      "id": "burst-4",
+      "name": "6分",
+      "startTime": 360,
+      "endTime": 380
+    },
+    {
+      "id": "burst-5",
+      "name": "8分",
+      "startTime": 480,
+      "endTime": 500
+    },
+    {
+      "id": "burst-6",
+      "name": "10分",
+      "startTime": 600,
+      "endTime": 615
+    }
+  ]
+}

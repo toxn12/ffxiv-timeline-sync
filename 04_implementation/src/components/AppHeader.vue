@@ -4,6 +4,8 @@ import BossSelector from '@/components/header/BossSelector.vue'
 import PartySelector from '@/components/header/PartySelector.vue'
 import ZoomControls from '@/components/header/ZoomControls.vue'
 import EditToolbar from '@/components/header/EditToolbar.vue'
+import GimmickFilterPanel from '@/components/timeline/GimmickFilterPanel.vue'
+import { downloadGuideMarkdown } from '@/utils/guideExporter'
 
 const contentStore = useContentStore()
 const partyStore = usePartyStore()
@@ -20,6 +22,12 @@ function handleSave() {
 function handleExitEdit() {
   uiStore.setMode('normal')
 }
+
+function handleExportGuide() {
+  if (contentStore.currentContent) {
+    downloadGuideMarkdown(contentStore.currentContent)
+  }
+}
 </script>
 
 <template>
@@ -35,7 +43,17 @@ function handleExitEdit() {
         パーティ管理
       </button>
       <div class="flex-1" />
+      <!-- ギミックフィルタパネル（コンテンツ選択時のみ表示） -->
+      <GimmickFilterPanel v-if="contentStore.currentContent" />
       <ZoomControls />
+      <!-- 攻略ガイドエクスポート（コンテンツ選択時のみ表示） -->
+      <button
+        v-if="contentStore.currentContent"
+        class="px-3 py-1.5 bg-green-600 hover:bg-green-500 rounded text-sm"
+        @click="handleExportGuide"
+      >
+        📄 攻略ガイド
+      </button>
       <button
         class="px-3 py-1.5 bg-blue-600 hover:bg-blue-500 rounded text-sm"
         @click="handleSave"

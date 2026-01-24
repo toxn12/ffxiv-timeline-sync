@@ -11,7 +11,7 @@ export const useUIStore = defineStore('ui', () => {
   const selectedTool = ref<EditTool>('select')
   const selectedObjectId = ref<string | null>(null)
   const selectedObjectType = ref<ObjectType | null>(null)
-  const zoomLevel = ref(1.0)
+  const zoomLevel = ref(2.5) // デフォルト2.5倍（1秒=25px）
   const scrollPosition = ref({ x: 0, y: 0 })
 
   const modals = ref({
@@ -121,14 +121,14 @@ export const useUIStore = defineStore('ui', () => {
     closeModal('confirm')
   }
 
-  // 時間をピクセル位置に変換
-  function timeToPixel(time: number): number {
-    return time * pixelsPerSecond.value
+  // 時間をピクセル位置に変換（time: ミリ秒）
+  function timeToPixel(timeMs: number): number {
+    return (timeMs / 1000) * pixelsPerSecond.value
   }
 
-  // ピクセル位置を時間に変換
+  // ピクセル位置を時間に変換（戻り値: ミリ秒）
   function pixelToTime(pixel: number): number {
-    return pixel / pixelsPerSecond.value
+    return (pixel / pixelsPerSecond.value) * 1000
   }
 
   // ドラッグ中の時刻を設定

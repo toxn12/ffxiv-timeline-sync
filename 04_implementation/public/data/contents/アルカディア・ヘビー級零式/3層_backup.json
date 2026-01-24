@@ -1,0 +1,1216 @@
+{
+  "id": "ザ-タイラント",
+  "raidName": "アルカディア・ヘビー級零式",
+  "bossName": "3層（ザ・タイラント）",
+  "duration": 615,
+  "targets": [
+    "ボス"
+  ],
+  "phases": [
+    {
+      "id": "phase-1",
+      "name": "フェーズ1",
+      "startTime": 0,
+      "endTime": 120,
+      "color": "#60A5FA"
+    },
+    {
+      "id": "phase-2",
+      "name": "フェーズ2",
+      "startTime": 120,
+      "endTime": 240,
+      "color": "#34D399"
+    },
+    {
+      "id": "phase-3",
+      "name": "フェーズ3",
+      "startTime": 240,
+      "endTime": 360,
+      "color": "#FBBF24"
+    },
+    {
+      "id": "phase-4",
+      "name": "フェーズ4",
+      "startTime": 360,
+      "endTime": 480,
+      "color": "#F87171"
+    },
+    {
+      "id": "phase-5",
+      "name": "フェーズ5",
+      "startTime": 480,
+      "endTime": 600,
+      "color": "#A78BFA"
+    },
+    {
+      "id": "phase-6",
+      "name": "フェーズ6",
+      "startTime": 600,
+      "endTime": 615,
+      "color": "#60A5FA"
+    }
+  ],
+  "gimmicks": [
+    {
+      "id": "gimmick-1",
+      "name": "キング・オブ・アルカディア",
+      "time": 6.5,
+      "castDuration": 4.7,
+      "phaseId": "phase-1",
+      "category": "raidwide",
+      "damageType": "physical",
+      "severity": "high",
+      "mitigation": "required",
+      "targets": [
+        "all"
+      ],
+      "description": "全体物理攻撃。牽制が非常に有効。軽減必須。",
+      "mechanics": [
+        "全体攻撃"
+      ]
+    },
+    {
+      "id": "gimmick-2",
+      "name": "ウェポンジェネレート：バスター",
+      "time": 16.7,
+      "castDuration": 1.7,
+      "phaseId": "phase-1",
+      "category": "tankbuster",
+      "damageType": "physical",
+      "severity": "high",
+      "mitigation": "required",
+      "targets": [
+        "mt",
+        "st"
+      ],
+      "description": "ヘイト1位・2位への強攻撃。STは常にスタンス維持。",
+      "mechanics": [
+        "タンクバスター"
+      ]
+    },
+    {
+      "id": "gimmick-3",
+      "name": "トロフィーウェポンズ",
+      "time": 36.4,
+      "castDuration": 2.7,
+      "phaseId": "phase-1",
+      "category": "mechanic",
+      "damageType": "mixed",
+      "severity": "medium",
+      "mitigation": "optional",
+      "targets": [
+        "all"
+      ],
+      "description": "ボス向きを基準に8方向散開、頭割り処理が必要。",
+      "mechanics": [
+        "散開",
+        "頭割り"
+      ]
+    },
+    {
+      "id": "gimmick-4",
+      "name": "ウェポンアサルト",
+      "time": 42.9,
+      "castDuration": 5.7,
+      "phaseId": "phase-1",
+      "category": "mechanic",
+      "damageType": "physical",
+      "severity": "medium",
+      "mitigation": "optional",
+      "targets": [
+        "tanks"
+      ],
+      "description": "範囲攻撃または連続攻撃。",
+      "mechanics": [
+        "範囲攻撃"
+      ]
+    },
+    {
+      "id": "gimmick-5",
+      "name": "ウェポンアサルト",
+      "time": 49.2,
+      "castDuration": 1.7,
+      "phaseId": "phase-1",
+      "category": "mechanic",
+      "damageType": "physical",
+      "severity": "medium",
+      "mitigation": "optional",
+      "targets": [
+        "tanks"
+      ],
+      "description": "範囲攻撃または連続攻撃。",
+      "mechanics": [
+        "範囲攻撃"
+      ]
+    },
+    {
+      "id": "gimmick-6",
+      "name": "ウェポンアサルト",
+      "time": 54.3,
+      "castDuration": 1.7,
+      "phaseId": "phase-1",
+      "category": "mechanic",
+      "damageType": "physical",
+      "severity": "medium",
+      "mitigation": "optional",
+      "targets": [
+        "tanks"
+      ],
+      "description": "範囲攻撃または連続攻撃。",
+      "mechanics": [
+        "範囲攻撃"
+      ]
+    },
+    {
+      "id": "gimmick-7",
+      "name": "ウェポンアサルト",
+      "time": 59.5,
+      "castDuration": 1.7,
+      "phaseId": "phase-1",
+      "category": "mechanic",
+      "damageType": "physical",
+      "severity": "medium",
+      "mitigation": "optional",
+      "targets": [
+        "tanks"
+      ],
+      "description": "範囲攻撃または連続攻撃。",
+      "mechanics": [
+        "範囲攻撃"
+      ]
+    },
+    {
+      "id": "gimmick-8",
+      "name": "トロフィーウェポンズ(2)",
+      "time": 70.8,
+      "castDuration": 2.7,
+      "phaseId": "phase-1",
+      "category": "mechanic",
+      "damageType": "mixed",
+      "severity": "medium",
+      "mitigation": "optional",
+      "targets": [
+        "all"
+      ],
+      "description": "ボス向きを基準に8方向散開、頭割り処理が必要。",
+      "mechanics": [
+        "散開",
+        "頭割り"
+      ]
+    },
+    {
+      "id": "gimmick-9",
+      "name": "コメットレイン",
+      "time": 76.9,
+      "castDuration": 3.7,
+      "phaseId": "phase-1",
+      "category": "mechanic",
+      "damageType": "magical",
+      "severity": "medium",
+      "mitigation": "optional",
+      "targets": [
+        "all"
+      ],
+      "description": "円形攻撃捨て後、散開または頭割り処理（2回目は逆パターン）。",
+      "mechanics": [
+        "範囲攻撃",
+        "散開",
+        "頭割り"
+      ]
+    },
+    {
+      "id": "gimmick-10",
+      "name": "プチコメット",
+      "time": 82.1,
+      "castDuration": 2.7,
+      "phaseId": "phase-1",
+      "category": "mechanic",
+      "damageType": "magical",
+      "severity": "low",
+      "mitigation": "none",
+      "targets": [
+        "all"
+      ],
+      "description": "隕石設置または小範囲攻撃。",
+      "mechanics": [
+        "範囲攻撃"
+      ]
+    },
+    {
+      "id": "gimmick-11",
+      "name": "プチコメット(2)",
+      "time": 84.1,
+      "castDuration": 2.7,
+      "phaseId": "phase-1",
+      "category": "mechanic",
+      "damageType": "magical",
+      "severity": "low",
+      "mitigation": "none",
+      "targets": [
+        "all"
+      ],
+      "description": "隕石設置または小範囲攻撃。",
+      "mechanics": [
+        "範囲攻撃"
+      ]
+    },
+    {
+      "id": "gimmick-12",
+      "name": "ヘビーコメット",
+      "time": 86.1,
+      "castDuration": 4.7,
+      "phaseId": "phase-1",
+      "category": "proximity",
+      "damageType": "magical",
+      "severity": "medium",
+      "mitigation": "optional",
+      "targets": [
+        "all"
+      ],
+      "description": "距離減衰攻撃。離れて受ける。",
+      "mechanics": [
+        "距離減衰"
+      ]
+    },
+    {
+      "id": "gimmick-13",
+      "name": "ウェポンアサルト(2)",
+      "time": 87.8,
+      "castDuration": 5.7,
+      "phaseId": "phase-1",
+      "category": "mechanic",
+      "damageType": "physical",
+      "severity": "medium",
+      "mitigation": "optional",
+      "targets": [
+        "tanks"
+      ],
+      "description": "範囲攻撃または連続攻撃。",
+      "mechanics": [
+        "範囲攻撃"
+      ]
+    },
+    {
+      "id": "gimmick-14",
+      "name": "ウェポンアサルト(2)",
+      "time": 94.1,
+      "castDuration": 1.7,
+      "phaseId": "phase-1",
+      "category": "mechanic",
+      "damageType": "physical",
+      "severity": "medium",
+      "mitigation": "optional",
+      "targets": [
+        "tanks"
+      ],
+      "description": "範囲攻撃または連続攻撃。",
+      "mechanics": [
+        "範囲攻撃"
+      ]
+    },
+    {
+      "id": "gimmick-15",
+      "name": "ウェポンアサルト(2)",
+      "time": 99.2,
+      "castDuration": 1.7,
+      "phaseId": "phase-1",
+      "category": "mechanic",
+      "damageType": "physical",
+      "severity": "medium",
+      "mitigation": "optional",
+      "targets": [
+        "tanks"
+      ],
+      "description": "範囲攻撃または連続攻撃。",
+      "mechanics": [
+        "範囲攻撃"
+      ]
+    },
+    {
+      "id": "gimmick-16",
+      "name": "ウェポンアサルト(2)",
+      "time": 104.4,
+      "castDuration": 1.7,
+      "phaseId": "phase-1",
+      "category": "mechanic",
+      "damageType": "physical",
+      "severity": "medium",
+      "mitigation": "optional",
+      "targets": [
+        "tanks"
+      ],
+      "description": "範囲攻撃または連続攻撃。",
+      "mechanics": [
+        "範囲攻撃"
+      ]
+    },
+    {
+      "id": "gimmick-17",
+      "name": "プチコメット(3)",
+      "time": 108.5,
+      "castDuration": 2.7,
+      "phaseId": "phase-1",
+      "category": "mechanic",
+      "damageType": "magical",
+      "severity": "low",
+      "mitigation": "none",
+      "targets": [
+        "all"
+      ],
+      "description": "隕石設置または小範囲攻撃。",
+      "mechanics": [
+        "範囲攻撃"
+      ]
+    },
+    {
+      "id": "gimmick-18",
+      "name": "プチコメット(4)",
+      "time": 110.6,
+      "castDuration": 2.7,
+      "phaseId": "phase-1",
+      "category": "mechanic",
+      "damageType": "magical",
+      "severity": "low",
+      "mitigation": "none",
+      "targets": [
+        "all"
+      ],
+      "description": "隕石設置または小範囲攻撃。",
+      "mechanics": [
+        "範囲攻撃"
+      ]
+    },
+    {
+      "id": "gimmick-19",
+      "name": "コメット",
+      "time": 112.6,
+      "castDuration": 4.7,
+      "phaseId": "phase-1",
+      "category": "mechanic",
+      "damageType": "magical",
+      "severity": "low",
+      "mitigation": "none",
+      "targets": [
+        "all"
+      ],
+      "description": "隕石設置または小範囲攻撃。",
+      "mechanics": [
+        "範囲攻撃"
+      ]
+    },
+    {
+      "id": "gimmick-20",
+      "name": "キング・オブ・アルカディア(2)",
+      "time": 118.6,
+      "castDuration": 4.7,
+      "phaseId": "phase-1",
+      "category": "raidwide",
+      "damageType": "physical",
+      "severity": "high",
+      "mitigation": "required",
+      "targets": [
+        "all"
+      ],
+      "description": "全体物理攻撃。牽制が非常に有効。軽減必須。",
+      "mechanics": [
+        "全体攻撃"
+      ]
+    },
+    {
+      "id": "gimmick-21",
+      "name": "ウェポンジェネレート：ドミネーション",
+      "time": 134.1,
+      "castDuration": 1.7,
+      "phaseId": "phase-2",
+      "category": "mechanic",
+      "damageType": "magical",
+      "severity": "medium",
+      "mitigation": "optional",
+      "targets": [
+        "all"
+      ],
+      "description": "フィールド6本の直線範囲回避＋2人頭割り。",
+      "mechanics": [
+        "範囲回避",
+        "頭割り"
+      ]
+    },
+    {
+      "id": "gimmick-22",
+      "name": "ダンス・オブ・ドミネーション",
+      "time": 142.3,
+      "castDuration": 0.2,
+      "phaseId": "phase-2",
+      "category": "mechanic",
+      "damageType": "magical",
+      "severity": "medium",
+      "mitigation": "optional",
+      "targets": [
+        "all"
+      ],
+      "description": "フィールド6本の直線範囲回避＋2人頭割り。",
+      "mechanics": [
+        "範囲回避",
+        "頭割り"
+      ]
+    },
+    {
+      "id": "gimmick-23",
+      "name": "ザ・ハリケーン",
+      "time": 146.9,
+      "castDuration": 4.7,
+      "phaseId": "phase-2",
+      "category": "raidwide",
+      "damageType": "magical",
+      "severity": "medium",
+      "mitigation": "optional",
+      "targets": [
+        "all"
+      ],
+      "description": "全体魔法攻撃。",
+      "mechanics": [
+        "全体攻撃"
+      ]
+    },
+    {
+      "id": "gimmick-24",
+      "name": "爆発",
+      "time": 147.1,
+      "castDuration": 5.2,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-25",
+      "name": "ウェポンジェネレート：バスター",
+      "time": 156,
+      "castDuration": 1.7,
+      "phaseId": "phase-2",
+      "category": "tankbuster",
+      "damageType": "physical",
+      "severity": "high",
+      "mitigation": "required",
+      "targets": [
+        "mt",
+        "st"
+      ],
+      "description": "ヘイト1位・2位への強攻撃。STは常にスタンス維持。",
+      "mechanics": [
+        "タンクバスター"
+      ]
+    },
+    {
+      "id": "gimmick-26",
+      "name": "ザ・ミールストーム",
+      "time": 175.9,
+      "castDuration": 4.7,
+      "phaseId": "phase-2",
+      "category": "raidwide",
+      "damageType": "magical",
+      "severity": "fatal",
+      "mitigation": "required",
+      "targets": [
+        "all"
+      ],
+      "description": "全員のHPを1にする攻撃。ヒーラーの回復漏れに注意。",
+      "mechanics": [
+        "HP強制変更"
+      ]
+    },
+    {
+      "id": "gimmick-27",
+      "name": "アルティメット・トロフィーウェポンズ",
+      "time": 183.6,
+      "castDuration": 2.7,
+      "phaseId": "phase-2",
+      "category": "mechanic",
+      "damageType": "mixed",
+      "severity": "medium",
+      "mitigation": "optional",
+      "targets": [
+        "all"
+      ],
+      "description": "ボス向きを基準に8方向散開、頭割り処理が必要。",
+      "mechanics": [
+        "散開",
+        "頭割り"
+      ]
+    },
+    {
+      "id": "gimmick-28",
+      "name": "ウェポンアバランチ",
+      "time": 189.4,
+      "castDuration": 4.7,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-29",
+      "name": "ウェポンアサルト(3)",
+      "time": 194.6,
+      "castDuration": 1.7,
+      "phaseId": "phase-2",
+      "category": "mechanic",
+      "damageType": "physical",
+      "severity": "medium",
+      "mitigation": "optional",
+      "targets": [
+        "tanks"
+      ],
+      "description": "範囲攻撃または連続攻撃。",
+      "mechanics": [
+        "範囲攻撃"
+      ]
+    },
+    {
+      "id": "gimmick-30",
+      "name": "ウェポンアサルト(3)",
+      "time": 199.8,
+      "castDuration": 1.7,
+      "phaseId": "phase-2",
+      "category": "mechanic",
+      "damageType": "physical",
+      "severity": "medium",
+      "mitigation": "optional",
+      "targets": [
+        "tanks"
+      ],
+      "description": "範囲攻撃または連続攻撃。",
+      "mechanics": [
+        "範囲攻撃"
+      ]
+    },
+    {
+      "id": "gimmick-31",
+      "name": "ウェポンアサルト(3)",
+      "time": 204.9,
+      "castDuration": 1.7,
+      "phaseId": "phase-2",
+      "category": "mechanic",
+      "damageType": "physical",
+      "severity": "medium",
+      "mitigation": "optional",
+      "targets": [
+        "tanks"
+      ],
+      "description": "範囲攻撃または連続攻撃。",
+      "mechanics": [
+        "範囲攻撃"
+      ]
+    },
+    {
+      "id": "gimmick-32",
+      "name": "ウェポンアサルト(4)",
+      "time": 210,
+      "castDuration": 1.7,
+      "phaseId": "phase-2",
+      "category": "mechanic",
+      "damageType": "physical",
+      "severity": "medium",
+      "mitigation": "optional",
+      "targets": [
+        "tanks"
+      ],
+      "description": "範囲攻撃または連続攻撃。",
+      "mechanics": [
+        "範囲攻撃"
+      ]
+    },
+    {
+      "id": "gimmick-33",
+      "name": "ウェポンアサルト(4)",
+      "time": 215.2,
+      "castDuration": 1.7,
+      "phaseId": "phase-2",
+      "category": "mechanic",
+      "damageType": "physical",
+      "severity": "medium",
+      "mitigation": "optional",
+      "targets": [
+        "tanks"
+      ],
+      "description": "範囲攻撃または連続攻撃。",
+      "mechanics": [
+        "範囲攻撃"
+      ]
+    },
+    {
+      "id": "gimmick-34",
+      "name": "ウェポンアサルト(4)",
+      "time": 220.3,
+      "castDuration": 1.7,
+      "phaseId": "phase-2",
+      "category": "mechanic",
+      "damageType": "physical",
+      "severity": "medium",
+      "mitigation": "optional",
+      "targets": [
+        "tanks"
+      ],
+      "description": "範囲攻撃または連続攻撃。",
+      "mechanics": [
+        "範囲攻撃"
+      ]
+    },
+    {
+      "id": "gimmick-35",
+      "name": "イモータルレイン",
+      "time": 226.6,
+      "castDuration": 2.7,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-36",
+      "name": "ワン・アンド・オンリー",
+      "time": 233.7,
+      "castDuration": 5.7,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-37",
+      "name": "ワン・アンド・オンリー",
+      "time": 233.7,
+      "castDuration": 8.7,
+      "phaseId": "phase-2"
+    },
+    {
+      "id": "gimmick-38",
+      "name": "ファイアストリーム",
+      "time": 249.9,
+      "castDuration": 4.7,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-39",
+      "name": "爆発",
+      "time": 255.9,
+      "castDuration": 2.7,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-40",
+      "name": "爆発(2)",
+      "time": 259.2,
+      "castDuration": 2.7,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-41",
+      "name": "オービタルライン",
+      "time": 263.5,
+      "castDuration": 4.7,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-42",
+      "name": "オービタルライン",
+      "time": 271.6,
+      "castDuration": 5.7,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-43",
+      "name": "ファイア・アンド・テイル",
+      "time": 273.1,
+      "castDuration": 3.7,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-44",
+      "name": "ファイア・アンド・テイル",
+      "time": 273.1,
+      "castDuration": 4.7,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-45",
+      "name": "オービタルライン(2)",
+      "time": 273.2,
+      "castDuration": 5.7,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-46",
+      "name": "オービタルライン(3)",
+      "time": 274.7,
+      "castDuration": 5.7,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-47",
+      "name": "オービタルライン(4)",
+      "time": 276.2,
+      "castDuration": 5.7,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-48",
+      "name": "メテオレイン",
+      "time": 289.5,
+      "castDuration": 4.7,
+      "phaseId": "phase-3",
+      "category": "mechanic",
+      "damageType": "magical",
+      "severity": "high",
+      "mitigation": "recommended",
+      "targets": [
+        "all"
+      ],
+      "description": "隕石設置＋頭割り＋外周隕石処理の複合ギミック。",
+      "mechanics": [
+        "隕石",
+        "頭割り",
+        "範囲回避"
+      ]
+    },
+    {
+      "id": "gimmick-49",
+      "name": "ビッグファイア",
+      "time": 297.2,
+      "castDuration": 4.7,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-50",
+      "name": "ビッグファイア(2)",
+      "time": 307.2,
+      "castDuration": 4.7,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-51",
+      "name": "爆発",
+      "time": 313.4,
+      "castDuration": 2.7,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-52",
+      "name": "ビッグファイア(3)",
+      "time": 317.2,
+      "castDuration": 4.7,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-53",
+      "name": "爆発(2)",
+      "time": 323.4,
+      "castDuration": 2.7,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-54",
+      "name": "ビッグファイア(4)",
+      "time": 327.2,
+      "castDuration": 4.7,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-55",
+      "name": "爆発(3)",
+      "time": 333.4,
+      "castDuration": 2.7,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-56",
+      "name": "トライスターズ・タイラントフォール",
+      "time": 338.3,
+      "castDuration": 6.7,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-57",
+      "name": "フラットライナー",
+      "time": 358.8,
+      "castDuration": 3.7,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-58",
+      "name": "フラットライナー",
+      "time": 358.8,
+      "castDuration": 5.7,
+      "phaseId": "phase-3"
+    },
+    {
+      "id": "gimmick-59",
+      "name": "チャンピオンズ・メテオ",
+      "time": 373.9,
+      "castDuration": 4.7,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-60",
+      "name": "爆発",
+      "time": 382,
+      "castDuration": 9.7,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-61",
+      "name": "ファイアブレス",
+      "time": 398.1,
+      "castDuration": 7.7,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-62",
+      "name": "チャンピオンズ・メテオ",
+      "time": 400,
+      "castDuration": 2.7,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-63",
+      "name": "チャンピオンズ・メテオ(2)",
+      "time": 402.1,
+      "castDuration": 2.7,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-64",
+      "name": "チャンピオンズ・メテオ(3)",
+      "time": 404.1,
+      "castDuration": 2.7,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-65",
+      "name": "爆発(2)",
+      "time": 414.1,
+      "castDuration": 9.7,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-66",
+      "name": "ファイアブレス(2)",
+      "time": 430.3,
+      "castDuration": 7.7,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-67",
+      "name": "チャンピオンズ・メテオ(4)",
+      "time": 432.1,
+      "castDuration": 2.7,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-68",
+      "name": "チャンピオンズ・メテオ(5)",
+      "time": 434.1,
+      "castDuration": 2.7,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-69",
+      "name": "チャンピオンズ・メテオ(6)",
+      "time": 436.1,
+      "castDuration": 2.7,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-70",
+      "name": "チャンピオンズ・メテオ(7)",
+      "time": 436.1,
+      "castDuration": 2.7,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-71",
+      "name": "ヘビーメテオ",
+      "time": 443.4,
+      "castDuration": 4.7,
+      "phaseId": "phase-4",
+      "category": "proximity",
+      "damageType": "magical",
+      "severity": "medium",
+      "mitigation": "optional",
+      "targets": [
+        "all"
+      ],
+      "description": "距離減衰攻撃。離れて受ける。",
+      "mechanics": [
+        "距離減衰"
+      ]
+    },
+    {
+      "id": "gimmick-72",
+      "name": "爆発(3)",
+      "time": 452.1,
+      "castDuration": 9.7,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-73",
+      "name": "アルカディア・クラッシュ",
+      "time": 457.2,
+      "castDuration": 5.7,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-74",
+      "name": "アルカディア・クラッシュ",
+      "time": 457.2,
+      "castDuration": 15.2,
+      "phaseId": "phase-4"
+    },
+    {
+      "id": "gimmick-75",
+      "name": "キング・オブ・アルカディア(3)",
+      "time": 478.3,
+      "castDuration": 4.7,
+      "phaseId": "phase-4",
+      "category": "raidwide",
+      "damageType": "physical",
+      "severity": "high",
+      "mitigation": "required",
+      "targets": [
+        "all"
+      ],
+      "description": "全体物理攻撃。牽制が非常に有効。軽減必須。",
+      "mechanics": [
+        "全体攻撃"
+      ]
+    },
+    {
+      "id": "gimmick-76",
+      "name": "ファイアストリーム(2)",
+      "time": 489.5,
+      "castDuration": 4.7,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-77",
+      "name": "爆発(3)",
+      "time": 495.6,
+      "castDuration": 2.7,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-78",
+      "name": "爆発(4)",
+      "time": 498.8,
+      "castDuration": 2.7,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-79",
+      "name": "オービタルライン(2)",
+      "time": 503.2,
+      "castDuration": 4.7,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-80",
+      "name": "オービタルライン(5)",
+      "time": 511.3,
+      "castDuration": 5.7,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-81",
+      "name": "ファイア・アンド・テイル(2)",
+      "time": 512.8,
+      "castDuration": 3.7,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-82",
+      "name": "オービタルライン(6)",
+      "time": 512.8,
+      "castDuration": 5.7,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-83",
+      "name": "オービタルライン(7)",
+      "time": 514.3,
+      "castDuration": 5.7,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-84",
+      "name": "オービタルライン(8)",
+      "time": 515.9,
+      "castDuration": 5.7,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-85",
+      "name": "キング・オブ・アルカディア(4)",
+      "time": 521.1,
+      "castDuration": 4.7,
+      "phaseId": "phase-5",
+      "category": "raidwide",
+      "damageType": "physical",
+      "severity": "high",
+      "mitigation": "required",
+      "targets": [
+        "all"
+      ],
+      "description": "全体物理攻撃。牽制が非常に有効。軽減必須。",
+      "mechanics": [
+        "全体攻撃"
+      ]
+    },
+    {
+      "id": "gimmick-86",
+      "name": "メテオスタンピード",
+      "time": 533.5,
+      "castDuration": 4.7,
+      "phaseId": "phase-5",
+      "category": "mechanic",
+      "damageType": "magical",
+      "severity": "high",
+      "mitigation": "recommended",
+      "targets": [
+        "all"
+      ],
+      "description": "距離減衰＋塔踏み＋線処理＋頭割りの複合ギミック。",
+      "mechanics": [
+        "距離減衰",
+        "塔踏み",
+        "線処理",
+        "頭割り"
+      ]
+    },
+    {
+      "id": "gimmick-87",
+      "name": "ヒュージメテオ",
+      "time": 539.6,
+      "castDuration": 5.7,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-88",
+      "name": "チャンピオンズ・メテオ",
+      "time": 545.6,
+      "castDuration": 2.7,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-89",
+      "name": "チャンピオンズ・メテオ(2)",
+      "time": 547.6,
+      "castDuration": 2.7,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-90",
+      "name": "チャンピオンズ・メテオ(3)",
+      "time": 549.6,
+      "castDuration": 2.7,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-91",
+      "name": "チャンピオンズ・メテオ(4)",
+      "time": 551.6,
+      "castDuration": 2.7,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-92",
+      "name": "チャンピオンズ・メテオ(5)",
+      "time": 553.6,
+      "castDuration": 2.7,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-93",
+      "name": "チャンピオンズ・メテオ(6)",
+      "time": 555.6,
+      "castDuration": 2.7,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-94",
+      "name": "着弾",
+      "time": 556.6,
+      "castDuration": 4.7,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-95",
+      "name": "ツーウェイ・スピンファイア",
+      "time": 568.7,
+      "castDuration": 5.7,
+      "phaseId": "phase-5"
+    },
+    {
+      "id": "gimmick-96",
+      "name": "キング・オブ・アルカディア(5)",
+      "time": 578.8,
+      "castDuration": 4.7,
+      "phaseId": "phase-5",
+      "category": "raidwide",
+      "damageType": "physical",
+      "severity": "high",
+      "mitigation": "required",
+      "targets": [
+        "all"
+      ],
+      "description": "全体物理攻撃。牽制が非常に有効。軽減必須。",
+      "mechanics": [
+        "全体攻撃"
+      ]
+    },
+    {
+      "id": "gimmick-97",
+      "name": "ハートブレイクキック",
+      "time": 591.3,
+      "castDuration": 4.7,
+      "phaseId": "phase-5",
+      "category": "stack",
+      "damageType": "physical",
+      "severity": "fatal",
+      "mitigation": "invuln",
+      "targets": [
+        "all"
+      ],
+      "description": "3回連続頭割り。回数を重ねるたび着弾回数と与ダメージが増加。2・3回目はタンク無敵必須。",
+      "mechanics": [
+        "頭割り",
+        "連続攻撃"
+      ]
+    }
+  ],
+  "burstTimings": [
+    {
+      "id": "burst-1",
+      "name": "開幕",
+      "startTime": 0,
+      "endTime": 20
+    },
+    {
+      "id": "burst-2",
+      "name": "2分",
+      "startTime": 120,
+      "endTime": 140
+    },
+    {
+      "id": "burst-3",
+      "name": "4分",
+      "startTime": 240,
+      "endTime": 260
+    },
+    {
+      "id": "burst-4",
+      "name": "6分",
+      "startTime": 360,
+      "endTime": 380
+    },
+    {
+      "id": "burst-5",
+      "name": "8分",
+      "startTime": 480,
+      "endTime": 500
+    },
+    {
+      "id": "burst-6",
+      "name": "10分",
+      "startTime": 600,
+      "endTime": 615
+    }
+  ]
+}
