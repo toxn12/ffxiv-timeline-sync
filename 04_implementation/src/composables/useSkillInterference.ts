@@ -54,7 +54,7 @@ export function useSkillInterference() {
               (startTime < otherEndTime && endTime > otherStartTime)
 
             if (isOverlapping) {
-              interferingMembers.push(otherMember.name)
+              interferingMembers.push(otherMember.playerName || otherMember.job)
             }
           }
         }

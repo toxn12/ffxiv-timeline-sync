@@ -61,13 +61,13 @@ export const useContentStore = defineStore('content', () => {
       id: generateId(),
       raidName: data.raidName ?? '新規レイド',
       bossName: data.bossName ?? '新規ボス',
-      duration: data.duration ?? 600,
+      duration: data.duration ?? 600000,  // 600秒 = 600000ms
       targets: data.targets ?? ['ボス'],
       phases: [{
         id: generateId(),
         name: 'フェーズ1',
         startTime: 0,
-        endTime: data.duration ?? 600,
+        endTime: data.duration ?? 600000,  // 600秒 = 600000ms
         color: '#60A5FA'
       }],
       gimmicks: [],
@@ -215,7 +215,7 @@ export const useContentStore = defineStore('content', () => {
       id: generateId(),
       name: data.name ?? '新規ギミック',
       time,
-      castDuration: data.castDuration ?? 3,
+      castDuration: data.castDuration ?? 3000,  // 3秒 = 3000ms
       phaseId: phase?.id ?? currentContent.value.phases[0]?.id ?? ''
     }
 
@@ -275,7 +275,7 @@ export const useContentStore = defineStore('content', () => {
       id: generateId(),
       name: data.name,
       startTime: data.startTime ?? 0,
-      endTime: data.endTime ?? 15
+      endTime: data.endTime ?? 15000  // 15秒 = 15000ms
     }
 
     currentContent.value.burstTimings.push(newBurst)

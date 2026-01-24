@@ -182,12 +182,6 @@ function handleMouseEnter(gimmick: typeof gimmicks.value[0], e: MouseEvent) {
   }
 }
 
-function handleMouseMove(gimmick: typeof gimmicks.value[0], e: MouseEvent) {
-  if (hoveredGimmickId.value === gimmick.id) {
-    tooltipPosition.value = { x: e.clientX + 10, y: e.clientY + 10 }
-  }
-}
-
 function handleMouseLeave() {
   hoveredGimmickId.value = null
 }
@@ -228,11 +222,11 @@ function handleMouseDown(gimmick: typeof gimmicks.value[0], e: MouseEvent) {
     <div
       v-for="gimmick in gimmicks"
       :key="gimmick.id"
-      class="absolute top-1 h-6 rounded flex items-center px-2 text-xs text-white truncate"
+      class="absolute top-1 h-6 rounded flex items-center px-2 text-xs text-white truncate transition-all"
       :class="[
         getGimmickColorClass(gimmick),
         isSelected(gimmick.id) ? 'ring-2 ring-yellow-400' : '',
-        isHighPriority(gimmick) ? 'ring-2 ring-red-500 animate-pulse' : '',
+        isHighPriority(gimmick) ? 'ring-2 ring-red-500' : '',
         uiStore.isEditMode ? 'cursor-move hover:brightness-110' : '',
         gimmick.memo && !isHighPriority(gimmick) ? 'ring-1 ring-yellow-500/50' : ''
       ]"
@@ -242,11 +236,11 @@ function handleMouseDown(gimmick: typeof gimmicks.value[0], e: MouseEvent) {
       @mousedown="handleMouseDown(gimmick, $event)"
       @contextmenu="handleContextMenu(gimmick, $event)"
       @mouseenter="handleMouseEnter(gimmick, $event)"
-      @mousemove="handleMouseMove(gimmick, $event)"
       @mouseleave="handleMouseLeave"
     >
-      <!-- 発動マーカー（キャスト終了位置） -->
+      <!-- 発動マーカー（キャスト終了位置） - 編集モード以外で表示 -->
       <div
+        v-if="!uiStore.isEditMode"
         class="absolute right-0 top-0 h-full w-1 bg-white opacity-75 pointer-events-none"
         :title="`発動: ${formatSeconds(gimmick.time + gimmick.castDuration)}`"
       />
