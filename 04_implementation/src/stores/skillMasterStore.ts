@@ -4,6 +4,7 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 import type { Skill, Job, SkillMaster } from '@/types'
+import { useUIStore } from './uiStore'
 
 export const useSkillMasterStore = defineStore('skillMaster', () => {
   // State
@@ -34,7 +35,9 @@ export const useSkillMasterStore = defineStore('skillMaster', () => {
 
   // スキルマスターを読み込み
   async function loadSkillMaster(): Promise<void> {
+    const uiStore = useUIStore()
     try {
+      uiStore.updateLoadingProgress(0, 'スキルマスターを読み込み中...')
       const res = await fetch('/data/skills/jobs.json')
       const data: SkillMaster = await res.json()
       jobs.value = data.jobs

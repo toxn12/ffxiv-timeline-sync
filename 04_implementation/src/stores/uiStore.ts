@@ -31,6 +31,14 @@ export const useUIStore = defineStore('ui', () => {
   // スキルドラッグ中の垂直線表示用（開始位置と終了位置）
   const draggingSkillPositions = ref<{ startTime: number; endTime: number } | null>(null)
 
+  // ローディング状態
+  const isLoading = ref(false)
+  const loadingMessage = ref('')
+  const loadingProgress = ref({ current: 0, total: 0 })
+
+  // モバイル用ヘッダー折りたたみ状態
+  const headerCollapsed = ref(false)
+
   // Getters
   const isEditMode = computed(() => mode.value === 'edit')
   const isNormalMode = computed(() => mode.value === 'normal')
@@ -149,6 +157,33 @@ export const useUIStore = defineStore('ui', () => {
     }
   }
 
+  // ローディング開始
+  function startLoading(message: string, total: number = 0): void {
+    isLoading.value = true
+    loadingMessage.value = message
+    loadingProgress.value = { current: 0, total }
+  }
+
+  // ローディング進捗更新
+  function updateLoadingProgress(current: number, message?: string): void {
+    loadingProgress.value.current = current
+    if (message) {
+      loadingMessage.value = message
+    }
+  }
+
+  // ローディング終了
+  function stopLoading(): void {
+    isLoading.value = false
+    loadingMessage.value = ''
+    loadingProgress.value = { current: 0, total: 0 }
+  }
+
+  // ヘッダー折りたたみトグル
+  function toggleHeaderCollapsed(): void {
+    headerCollapsed.value = !headerCollapsed.value
+  }
+
   return {
     // State
     mode,
@@ -161,6 +196,10 @@ export const useUIStore = defineStore('ui', () => {
     confirmData,
     draggingTime,
     draggingSkillPositions,
+    isLoading,
+    loadingMessage,
+    loadingProgress,
+    headerCollapsed,
     // Getters
     isEditMode,
     isNormalMode,
@@ -183,6 +222,10 @@ export const useUIStore = defineStore('ui', () => {
     timeToPixel,
     pixelToTime,
     setDraggingTime,
-    setDraggingSkillPositions
+    setDraggingSkillPositions,
+    startLoading,
+    updateLoadingProgress,
+    stopLoading,
+    toggleHeaderCollapsed
   }
 })

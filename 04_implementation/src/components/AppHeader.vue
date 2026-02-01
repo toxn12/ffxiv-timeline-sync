@@ -31,9 +31,19 @@ function handleExportGuide() {
 </script>
 
 <template>
-  <header class="bg-gray-800 border-b border-gray-700 px-4 py-2">
+  <header class="bg-gray-800 border-b border-gray-700 px-4 transition-all duration-300" :class="uiStore.headerCollapsed ? 'py-1' : 'py-2'">
+    <!-- モバイル用折りたたみボタン -->
+    <button
+      class="md:hidden mb-2 px-2 py-1 bg-gray-700 hover:bg-gray-600 rounded text-xs flex items-center gap-1"
+      @click="uiStore.toggleHeaderCollapsed()"
+    >
+      <span v-if="uiStore.headerCollapsed">▼</span>
+      <span v-else>▲</span>
+      <span>{{ uiStore.headerCollapsed ? 'メニューを表示' : 'メニューを隠す' }}</span>
+    </button>
+
     <!-- 通常モード -->
-    <div v-if="uiStore.isNormalMode" class="flex items-center gap-4">
+    <div v-if="uiStore.isNormalMode" class="flex items-center gap-4" :class="{ 'hidden md:flex': uiStore.headerCollapsed }">
       <BossSelector />
       <PartySelector />
       <button
@@ -63,7 +73,7 @@ function handleExportGuide() {
     </div>
 
     <!-- 編集モード -->
-    <div v-else class="flex items-center gap-4">
+    <div v-else class="flex items-center gap-4" :class="{ 'hidden md:flex': uiStore.headerCollapsed }">
       <div class="text-sm font-medium">
         編集中: {{ contentStore.currentContent?.bossName }}
       </div>

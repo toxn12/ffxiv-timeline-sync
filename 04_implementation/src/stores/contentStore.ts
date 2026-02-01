@@ -5,6 +5,7 @@ import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 import type { Content, Phase, Gimmick, BurstTiming, RaidInfo, ContentIndex, TimelineMemo } from '@/types'
 import { useHistoryStore } from './historyStore'
+import { useUIStore } from './uiStore'
 import { generateId } from '@/utils/idGenerator'
 
 export const useContentStore = defineStore('content', () => {
@@ -28,25 +29,38 @@ export const useContentStore = defineStore('content', () => {
 
   // コンテンツ一覧を読み込み
   async function loadContents(): Promise<void> {
+    const uiStore = useUIStore()
     try {
+      uiStore.startLoading('コンテンツ一覧を読み込み中...', 0)
+
       const indexRes = await fetch('/data/contents/index.json')
       const indexData: ContentIndex = await indexRes.json()
       raidIndex.value = indexData.raids
 
+      // 総ボス数を計算
+      const totalBosses = indexData.raids.reduce((sum, raid) => sum + raid.bosses.length, 0)
+      uiStore.updateLoadingProgress(0, `コンテンツを読み込み中... (0/${totalBosses})`)
+
       // 各ボスのJSONを読み込み
+      let loadedCount = 0
       for (const raid of indexData.raids) {
         for (const boss of raid.bosses) {
           try {
             const res = await fetch(`/data/contents/${boss.file}`)
             const content: Content = await res.json()
             contents.value.push(content)
+            loadedCount++
+            uiStore.updateLoadingProgress(loadedCount, `コンテンツを読み込み中... (${loadedCount}/${totalBosses})`)
           } catch (e) {
             console.warn(`Failed to load content: ${boss.file}`, e)
+            loadedCount++
+            uiStore.updateLoadingProgress(loadedCount, `コンテンツを読み込み中... (${loadedCount}/${totalBosses})`)
           }
         }
       }
     } catch (e) {
       console.error('Failed to load content index', e)
+      uiStore.stopLoading()
     }
   }
 

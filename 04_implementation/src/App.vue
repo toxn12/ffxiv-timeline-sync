@@ -4,6 +4,7 @@ import { useContentStore, usePartyStore, useSkillMasterStore, useUIStore, useHis
 import AppHeader from '@/components/AppHeader.vue'
 import Timeline from '@/components/Timeline.vue'
 import HelpText from '@/components/HelpText.vue'
+import LoadingIndicator from '@/components/LoadingIndicator.vue'
 import PartyManageModal from '@/components/modals/PartyManageModal.vue'
 import ContentSettingsModal from '@/components/modals/ContentSettingsModal.vue'
 import ConfirmModal from '@/components/modals/ConfirmModal.vue'
@@ -90,33 +91,41 @@ function handleDelete() {
 }
 
 onMounted(async () => {
-  // データ読み込み
-  await Promise.all([
-    contentStore.loadContents(),
-    skillMasterStore.loadSkillMaster()
-  ])
-  partyStore.loadParties()
+  try {
+    // データ読み込み
+    await Promise.all([
+      contentStore.loadContents(),
+      skillMasterStore.loadSkillMaster()
+    ])
+    partyStore.loadParties()
 
-  // 初期選択
-  if (contentStore.contents.length > 0) {
-    contentStore.selectContent(contentStore.contents[0].id)
-  }
+    // 初期選択
+    if (contentStore.contents.length > 0) {
+      contentStore.selectContent(contentStore.contents[0].id)
+    }
 
-  // パーティがなければ作成
-  if (partyStore.parties.length === 0 && contentStore.currentContentId) {
-    partyStore.createParty({ contentId: contentStore.currentContentId })
-  }
-  if (partyStore.parties.length > 0) {
-    partyStore.selectParty(partyStore.parties[0].id)
-  }
+    // パーティがなければ作成
+    if (partyStore.parties.length === 0 && contentStore.currentContentId) {
+      partyStore.createParty({ contentId: contentStore.currentContentId })
+    }
+    if (partyStore.parties.length > 0) {
+      partyStore.selectParty(partyStore.parties[0].id)
+    }
+  } finally {
+    // ローディング終了
+    uiStore.stopLoading()
 
-  // キーボードイベント
-  window.addEventListener('keydown', handleKeydown)
+    // キーボードイベント
+    window.addEventListener('keydown', handleKeydown)
+  }
 })
 </script>
 
 <template>
   <div class="h-screen flex flex-col bg-gray-900 text-white">
+    <!-- ローディングインジケータ -->
+    <LoadingIndicator />
+
     <!-- ヘッダー -->
     <AppHeader />
 
