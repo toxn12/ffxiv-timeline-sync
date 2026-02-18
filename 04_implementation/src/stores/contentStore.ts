@@ -13,6 +13,8 @@ export const useContentStore = defineStore('content', () => {
   const contents = ref<Content[]>([])
   const currentContentId = ref<string | null>(null)
   const raidIndex = ref<RaidInfo[]>([])
+  // ファイルパス → content.id のキャッシュ（遅延ロード用）
+  const contentFileMap = ref<Record<string, string>>({})
 
   // Getters
   const currentContent = computed(() =>
@@ -27,44 +29,47 @@ export const useContentStore = defineStore('content', () => {
 
   // Actions
 
-  // コンテンツ一覧を読み込み
+  // コンテンツ一覧のインデックスのみ読み込み（遅延ロード対応）
   async function loadContents(): Promise<void> {
     const uiStore = useUIStore()
     try {
-      uiStore.startLoading('コンテンツ一覧を読み込み中...', 0)
-
+      uiStore.startLoading('コンテンツ一覧を読み込み中...')
       const indexRes = await fetch('/data/contents/index.json')
       const indexData: ContentIndex = await indexRes.json()
       raidIndex.value = indexData.raids
-
-      // 総ボス数を計算
-      const totalBosses = indexData.raids.reduce((sum, raid) => sum + raid.bosses.length, 0)
-      uiStore.updateLoadingProgress(0, `コンテンツを読み込み中... (0/${totalBosses})`)
-
-      // 各ボスのJSONを読み込み
-      let loadedCount = 0
-      for (const raid of indexData.raids) {
-        for (const boss of raid.bosses) {
-          try {
-            const res = await fetch(`/data/contents/${boss.file}`)
-            const content: Content = await res.json()
-            contents.value.push(content)
-            loadedCount++
-            uiStore.updateLoadingProgress(loadedCount, `コンテンツを読み込み中... (${loadedCount}/${totalBosses})`)
-          } catch (e) {
-            console.warn(`Failed to load content: ${boss.file}`, e)
-            loadedCount++
-            uiStore.updateLoadingProgress(loadedCount, `コンテンツを読み込み中... (${loadedCount}/${totalBosses})`)
-          }
-        }
-      }
     } catch (e) {
       console.error('Failed to load content index', e)
       uiStore.stopLoading()
     }
   }
 
-  // コンテンツを選択
+  // ボスJSONを遅延ロードして選択（キャッシュあり）
+  async function selectContentByFile(file: string): Promise<void> {
+    const uiStore = useUIStore()
+
+    // キャッシュヒット：即座に切り替え
+    const cachedId = contentFileMap.value[file]
+    if (cachedId) {
+      currentContentId.value = cachedId
+      return
+    }
+
+    // キャッシュミス：フェッチしてキャッシュに登録
+    try {
+      uiStore.startLoading('ボスデータを読み込み中...')
+      const res = await fetch(`/data/contents/${file}`)
+      const content: Content = await res.json()
+      contents.value.push(content)
+      contentFileMap.value[file] = content.id
+      currentContentId.value = content.id
+    } catch (e) {
+      console.error(`Failed to load content: ${file}`, e)
+    } finally {
+      uiStore.stopLoading()
+    }
+  }
+
+  // コンテンツを選択（IDで直接指定。カスタム作成コンテンツ用）
   function selectContent(id: string): void {
     currentContentId.value = id
   }
@@ -110,8 +115,16 @@ export const useContentStore = defineStore('content', () => {
     const a = document.createElement('a')
     a.href = url
     a.download = `${currentContent.value.bossName}.json`
-    a.click()
-    URL.revokeObjectURL(url)
+    a.style.display = 'none'
+
+    try {
+      document.body.appendChild(a)
+      a.click()
+    } finally {
+      document.body.removeChild(a)
+      // ダウンロード開始を待ってからBlob URLを解放
+      setTimeout(() => URL.revokeObjectURL(url), 100)
+    }
   }
 
   // フェーズを分割
@@ -414,6 +427,7 @@ export const useContentStore = defineStore('content', () => {
     contents,
     currentContentId,
     raidIndex,
+    contentFileMap,
     // Getters
     currentContent,
     phases,
@@ -424,6 +438,7 @@ export const useContentStore = defineStore('content', () => {
     // Actions
     loadContents,
     selectContent,
+    selectContentByFile,
     createContent,
     updateContent,
     saveContent,

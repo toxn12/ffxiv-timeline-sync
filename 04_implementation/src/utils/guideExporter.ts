@@ -105,6 +105,14 @@ export function downloadGuideMarkdown(content: Content): void {
   const a = document.createElement('a')
   a.href = url
   a.download = `${content.bossName}_攻略ガイド.md`
-  a.click()
-  URL.revokeObjectURL(url)
+  a.style.display = 'none'
+
+  try {
+    document.body.appendChild(a)
+    a.click()
+  } finally {
+    document.body.removeChild(a)
+    // ダウンロード開始を待ってからBlob URLを解放
+    setTimeout(() => URL.revokeObjectURL(url), 100)
+  }
 }

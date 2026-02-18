@@ -84,19 +84,28 @@ const headerWidth = 150
 
 // ホイールイベント
 function handleWheel(e: WheelEvent) {
+  const target = e.target as HTMLElement
+
+  // Shift+ホイール: ズーム
   if (e.shiftKey) {
-    // ズーム
     e.preventDefault()
     if (e.deltaY < 0) {
       uiStore.zoomIn()
     } else {
       uiStore.zoomOut()
     }
-  } else {
-    // 横スクロール
-    if (timelineRef.value) {
-      timelineRef.value.scrollLeft += e.deltaY
-    }
+    return
+  }
+
+  // 左カラム（ヘッダー）エリア内の場合は縦スクロールを許可（処理しない）
+  if (headerScrollRef.value?.contains(target)) {
+    return
+  }
+
+  // タイムライン本体エリア: 縦ホイールを横スクロールに変換
+  e.preventDefault()
+  if (timelineRef.value) {
+    timelineRef.value.scrollLeft += e.deltaY
   }
 }
 
@@ -142,7 +151,7 @@ onUnmounted(() => {
       <div
         v-if="uiStore.isNormalMode"
         ref="headerScrollRef"
-        class="overflow-y-auto"
+        class="overflow-y-auto overflow-x-hidden"
         style="max-height: calc(100% - 88px)"
         @scroll="syncScroll('header')"
       >
@@ -284,7 +293,7 @@ onUnmounted(() => {
         <TimelineHeader />
 
         <!-- メンバーエリア -->
-        <MemberArea ref="memberAreaComponentRef" @scroll="syncScroll('member')" @wheel="handleWheel" />
+        <MemberArea ref="memberAreaComponentRef" @scroll="syncScroll('member')" />
       </div>
     </div>
 

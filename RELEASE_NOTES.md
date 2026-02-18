@@ -1,5 +1,46 @@
 # リリースノート
 
+## 2026-02-19
+
+### パフォーマンス改善
+
+#### 起動時パフォーマンス大幅改善（コンテンツの遅延ロード）
+
+起動時に全ボスのJSONファイルを一括ロードしていた処理を廃止し、遅延ロード方式に変更しました。
+アルカディア・ヘビー級零式3層の閲覧画面で1〜2分かかっていた問題が解消されます。
+
+**改善内容:**
+- 起動時は `index.json` のみ取得し、最初のボスを1件だけロード
+- ボス選択時に対象ボスのJSONを遅延ロード
+- 2回目以降の選択はキャッシュを使用（即座に切り替え）
+
+**技術詳細:**
+- `contentStore.selectContentByFile(file)` を新規追加
+  - キャッシュミス時のみフェッチ（`contentFileMap` でファイルパス→IDを管理）
+  - フェッチ中はローディングオーバーレイを表示
+- `contentStore.loadContents()` をインデックスのみのロードに変更
+- `BossSelector.vue` が `boss.file` を直接渡す形に変更（`getContentId()` を廃止）
+- `App.vue` の初期ロードを最初のボス1件のみに変更
+
+**セキュリティ対応 (OWASP):**
+- XSS対策: フェッチ結果はVueのリアクティブ変数に格納し、テンプレートで自動エスケープ
+- エラーハンドリング: フェッチ失敗時も `finally` でローディング状態を確実にクリア
+
+### 変更されたファイル
+
+#### 更新
+- `04_implementation/src/stores/contentStore.ts`
+  - `loadContents()` をインデックス取得のみに変更
+  - `selectContentByFile()` を新規追加
+  - `contentFileMap` 状態を追加
+- `04_implementation/src/components/header/BossSelector.vue`
+  - `selectBoss()` を非同期化し、`boss.file` を直接渡す形に変更
+  - 不要な `getContentId()` 関数を削除
+- `04_implementation/src/App.vue`
+  - 初期ロードを `selectContentByFile()` を使った最初のボス1件のみに変更
+
+---
+
 ## 2026-02-02
 
 ### 新機能

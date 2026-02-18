@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { ref, computed } from 'vue'
 import { usePartyStore, useUIStore, useContentStore } from '@/stores'
 import MemberRow from '@/components/timeline/MemberRow.vue'
 import MitigationGraph from '@/components/timeline/MitigationGraph.vue'
@@ -25,25 +25,12 @@ defineExpose({
 // スクロールイベントを親に伝える
 const emit = defineEmits<{
   scroll: []
-  wheel: [WheelEvent]
 }>()
 
 function handleScroll() {
   emit('scroll')
 }
 
-// ホイールイベントを親に委譲
-function handleWheel(e: WheelEvent) {
-  emit('wheel', e)
-}
-
-onMounted(() => {
-  scrollContainerRef.value?.addEventListener('wheel', handleWheel, { passive: false })
-})
-
-onUnmounted(() => {
-  scrollContainerRef.value?.removeEventListener('wheel', handleWheel)
-})
 </script>
 
 <template>
@@ -51,7 +38,7 @@ onUnmounted(() => {
   <div
     v-if="uiStore.isNormalMode"
     ref="scrollContainerRef"
-    class="overflow-y-auto"
+    class="overflow-y-auto overflow-x-hidden"
     style="max-height: calc(100vh - 180px)"
     @scroll="handleScroll"
   >

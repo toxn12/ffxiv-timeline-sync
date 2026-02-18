@@ -1,7 +1,7 @@
 /**
  * ドラッグ＆ドロップComposable
  */
-import { ref } from 'vue'
+import { ref, onUnmounted } from 'vue'
 import { useUIStore } from '@/stores'
 
 export interface DragState {
@@ -23,7 +23,25 @@ export function useDragAndDrop(onMove: (newTime: number) => void) {
     currentTime: 0
   })
 
+  // 現在のドラッグ中リスナーへの参照（クリーンアップ用）
+  let currentMoveHandler: ((e: MouseEvent) => void) | null = null
+  let currentUpHandler: (() => void) | null = null
+
+  function cleanup() {
+    if (currentMoveHandler) {
+      document.removeEventListener('mousemove', currentMoveHandler)
+      currentMoveHandler = null
+    }
+    if (currentUpHandler) {
+      document.removeEventListener('mouseup', currentUpHandler)
+      currentUpHandler = null
+    }
+  }
+
   function startDrag(e: MouseEvent, initialTime: number) {
+    // 既存のドラッグリスナーをクリーンアップ
+    cleanup()
+
     dragState.value = {
       isDragging: true,
       startX: e.clientX,
@@ -45,13 +63,20 @@ export function useDragAndDrop(onMove: (newTime: number) => void) {
 
     const handleMouseUp = () => {
       dragState.value.isDragging = false
-      document.removeEventListener('mousemove', handleMouseMove)
-      document.removeEventListener('mouseup', handleMouseUp)
+      cleanup()
     }
+
+    currentMoveHandler = handleMouseMove
+    currentUpHandler = handleMouseUp
 
     document.addEventListener('mousemove', handleMouseMove)
     document.addEventListener('mouseup', handleMouseUp)
   }
+
+  // コンポーネントアンマウント時にクリーンアップ
+  onUnmounted(() => {
+    cleanup()
+  })
 
   return {
     dragState,

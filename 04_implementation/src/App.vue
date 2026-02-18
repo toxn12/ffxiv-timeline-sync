@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { onMounted, onUnmounted } from 'vue'
 import { useContentStore, usePartyStore, useSkillMasterStore, useUIStore, useHistoryStore } from '@/stores'
 import AppHeader from '@/components/AppHeader.vue'
 import Timeline from '@/components/Timeline.vue'
@@ -92,17 +92,18 @@ function handleDelete() {
 
 onMounted(async () => {
   try {
-    // データ読み込み
+    // インデックスとスキルマスターのみ読み込み（高速化）
     await Promise.all([
       contentStore.loadContents(),
       skillMasterStore.loadSkillMaster()
     ])
-    partyStore.loadParties()
 
-    // 初期選択
-    if (contentStore.contents.length > 0) {
-      contentStore.selectContent(contentStore.contents[0].id)
+    // 最初のボスのみ遅延ロード（起動時は1ファイルのみ取得）
+    if (contentStore.raidIndex.length > 0 && contentStore.raidIndex[0].bosses.length > 0) {
+      await contentStore.selectContentByFile(contentStore.raidIndex[0].bosses[0].file)
     }
+
+    partyStore.loadParties()
 
     // パーティがなければ作成
     if (partyStore.parties.length === 0 && contentStore.currentContentId) {
@@ -112,12 +113,16 @@ onMounted(async () => {
       partyStore.selectParty(partyStore.parties[0].id)
     }
   } finally {
-    // ローディング終了
+    // ローディング終了（selectContentByFile が stopLoading を呼ぶが念のため）
     uiStore.stopLoading()
 
     // キーボードイベント
     window.addEventListener('keydown', handleKeydown)
   }
+})
+
+onUnmounted(() => {
+  window.removeEventListener('keydown', handleKeydown)
 })
 </script>
 

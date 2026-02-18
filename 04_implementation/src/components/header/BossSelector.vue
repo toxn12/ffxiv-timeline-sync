@@ -13,26 +13,16 @@ const currentBossName = computed(() => {
   return `${contentStore.currentContent.raidName} - ${contentStore.currentContent.bossName}`
 })
 
-function selectBoss(contentId: string, editMode: boolean) {
-  contentStore.selectContent(contentId)
-  if (editMode) {
-    uiStore.setMode('edit')
-  } else {
-    uiStore.setMode('normal')
-  }
+async function selectBoss(file: string, editMode: boolean) {
   isOpen.value = false
+  await contentStore.selectContentByFile(file)
+  uiStore.setMode(editMode ? 'edit' : 'normal')
 }
 
 function createNew() {
   contentStore.createContent({})
   uiStore.setMode('edit')
   isOpen.value = false
-}
-
-function getContentId(raidName: string, bossName: string): string | undefined {
-  return contentStore.contents.find(
-    c => c.raidName === raidName && c.bossName === bossName
-  )?.id
 }
 </script>
 
@@ -72,13 +62,13 @@ function getContentId(raidName: string, bossName: string): string | undefined {
           <template v-for="boss in raid.bosses" :key="boss.name">
             <div
               class="px-3 py-2 hover:bg-gray-700 cursor-pointer text-sm"
-              @click="selectBoss(getContentId(raid.name, boss.name) ?? '', false)"
+              @click="selectBoss(boss.file, false)"
             >
               {{ boss.name }}
             </div>
             <div
               class="px-3 py-2 hover:bg-gray-700 cursor-pointer text-sm text-yellow-400"
-              @click="selectBoss(getContentId(raid.name, boss.name) ?? '', true)"
+              @click="selectBoss(boss.file, true)"
             >
               {{ boss.name }}（編集）
             </div>
